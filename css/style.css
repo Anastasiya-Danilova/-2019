@@ -7,7 +7,7 @@
 
  
 * {
-      margin: 0;
+     	margin: 0;
       padding: 0;
       box-sizing: border-box;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 header {
-    
+  	
   }
 
 .header{ /* позиционирование логотип и меню бургер*/
@@ -51,10 +51,10 @@ header {
 }
 
 .post{/*первый экран*/
-      background-color: #f2a007;
+    	background-color: #f2a007;
       background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/parallasse_320.png?raw=true); 
-      background-repeat: no-repeat;
-      background-size: cover;
+    	background-repeat: no-repeat;
+    	background-size: cover;
       background-position: right bottom;
       padding-top: 240px;
       padding-right: 20px;
@@ -191,19 +191,19 @@ article {
 }
 
 .loc1{
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_8.png?raw=true);      
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_8.png?raw=true);    	
 }
 .loc2{
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-7.png?raw=true);      
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-7.png?raw=true);    	
 }
 .loc3{
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-17.png?raw=true);     
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-17.png?raw=true);    	
 }
 .loc4{
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_3.png?raw=true);      
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_3.png?raw=true);    	
 }
 .loc5{
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_10.png?raw=true);     
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_10.png?raw=true);    	
 }
 
 #slides .inner{
@@ -303,7 +303,7 @@ article {
   fill: #301309;
 } /*конец иконки блока преимущества*/
 
-.plus p{
+.plus p{/*текст блока преимущества*/
   font-size: 16px;
   text-align: center;
   font-weight: 500;
@@ -311,7 +311,7 @@ article {
   margin-top: 20px;
 }
 
-.icon {
+.icon {/*позиционирование иконок  и текста блока преимущества*/
   width: 124px;
   display: flex;
   flex-wrap: wrap;
@@ -320,3 +320,178 @@ article {
   margin-right: auto;
   margin-bottom: 60px;
 }
+
+/*блок подробности со скрытым текстом*/
+.hidden { /*скрытый текст*/
+   display: none;
+   padding-right: 20px;
+   padding-left: 20px;
+   padding-bottom: 35px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+} 
+.reveal:focus ~ .hidden, 
+.reveal:active ~ .hidden, 
+.hidden:hover {
+   display: flex;
+   flex-wrap: wrap;
+} 
+
+svg {
+  fill: #301309;
+  width: 30px; 
+  height: 30px;
+}
+
+
+.reveal { /*позиционирование заголвка скрытого текста*/
+  display: flex;
+  justify-content:space-between;
+  max-width: 500px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+.reveal:active, .reveal:focus { /*подчёркивание в скрытом тексте*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+.reveal p { /*заголовок блока подробности*/
+  font-weight: bold;
+  font-size: 20px;
+  
+}
+
+.detailed span {
+  font-weight: 500;
+}
+
+.hidden a {
+  font-weight: 500;
+  text-align: center;
+  margin-left: auto;
+  color: #301309; 
+}
+
+.hidden p {
+  max-width: 450px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  padding-bottom: 25px;
+}
+.payment .hidden {
+ border-bottom-color: transparent; 
+}
+
+/* конец блока со скрытым текстом*/
+
+/* Форма предзакза */
+*:focus {outline: none;}
+
+#inline {/*контейнер для формы*/ 
+    max-width: 500px;
+    background: #FEFCF4;
+    padding-top: 70px;
+    padding-bottom: 65px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: -2px;
+}
+
+.pryce {/*заголовок для формы*/ 
+    display: block;
+    width: 280px;
+    font-size: 22px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+}
+
+#inline .notice, #show .notice{ /*текст перед формой*/ 
+    max-width: 450px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 90px;
+}
+#inline .confirm, #show .confirm{/*текст обработка данных */ 
+   max-width: 280px;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+   margin-bottom: 50px;
+}
+
+.txt { /*поля формы*/
+    display: block;
+    color: rgba(48, 19, 9, 0.54);
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border: 1px solid #301309;
+    padding: 9px 10px;
+    font-size: 16px;
+    font-family: 'PT Root UI';
+    background: rgba(252, 249, 244, 0.05); 
+}
+
+.txt:focus {
+  border-style: solid; 
+  border-color: rgba(48, 19, 9, 0.54);
+  background: rgba(252, 249, 244, 1);
+  padding: 10px 10px;
+  color: #301309; 
+ }
+
+.txt:focus:invalid { /* невалидное поле */
+ background: rgba(252, 249, 244, 1); 
+ border-color: #D82F40;
+ border-style: solid;
+ box-shadow: 0 0 5px #D82F40; 
+ color: #D82F40;
+}
+
+.txt:required:valid { /*валидное поле */
+ background: rgba(252, 249, 244, 1);
+ box-shadow: 0 0 5px #008644;
+ border-color: #008644;
+}
+
+#send {/*кнопка*/
+    display: block;
+    width: 280px;
+    font-family: 'PT Root UI';
+    font-weight: bold;
+    font-size: 20px;
+    color: #F2A007;
+    cursor: pointer;
+    border: solid 1px #F2A007;
+    background: #FCF9F4;
+    box-shadow: 0px 2px 4px #986A14;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 9px 11px;
+}
+#send:hover {
+  background: linear-gradient(180deg, #F7BF55 0%, #F2A007 100%);
+  color: #FCF9F4;
+}
+
+#show {/*контейнер для формы*/ 
+    max-width: 500px;
+    padding-top: 70px;
+    padding-bottom: 65px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: -2px;
+    background-color: transparent;
+} 
+/* Форма предзаказа конец*/ 
