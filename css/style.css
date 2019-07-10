@@ -1,0 +1,322 @@
+@font-face {
+  font-family: 'PT Root UI', 'Open Sans', 'Fira Sans', Roboto, Rubik, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+@import "http://fonts.fontstorage.com/import/ptrootui.css";
+
+ 
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Root UI';
+  font-weight: normal;
+  color: #301309;
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 500px;
+}
+
+header {
+    
+  }
+
+.header{ /* позиционирование логотип и меню бургер*/
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-between;
+  max-width: 500px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 36px;
+  text-decoration: none;
+  color: #301309;
+  margin-right: auto;
+}
+
+ .bg_menu { /*svg бургера*/
+  width: 30px;
+  fill:rgba(48, 19, 9, 0.54);
+  margin-left: auto;
+}
+
+.post{/*первый экран*/
+      background-color: #f2a007;
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/parallasse_320.png?raw=true); 
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right bottom;
+      padding-top: 240px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 145px;
+}
+
+h1 {
+  color: #fCf9f4;
+  font-size: 48px;
+  text-align: center;
+  max-width: 500px;
+  min-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro { /*блок с первым описанием и баннером*/
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 45px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 75px;
+}
+
+.description { /*текст*/
+  max-width: 270px;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.button { /*контейнер для кнопок*/
+  max-width: 320px;
+  min-width: 280px;
+  padding-top:20px;
+  padding-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.click p { /*надпись кнопок*/
+  width: 280px;
+  padding-top:15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f2a007;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FCF9F4;
+  border: 1px solid #F2A007;
+  box-shadow: 0px 2px 4px #986A14;
+}
+
+.click { /*кнопки*/
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.click:hover p{ /*наведение на кнопку*/
+  background: linear-gradient(180deg, #F7BF55 0%, #F2A007 100%);
+  color: #FCF9F4;
+}
+
+.catalog p { /*отступ у певой кнопки*/
+  margin-bottom: 38px;
+}
+
+.banner { /*фон баннера*/
+  max-width: 500px;
+  background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.bonus { /*кнопка баннера*/
+ height: 172px;
+ font-size: 22px; 
+}
+
+.lookbook {/*блок слайдера*/
+ padding-top: 74px;
+ padding-bottom: 100px; 
+}
+
+.look {/*заголовок слайдера*/
+  min-width: 280px;
+  margin-bottom: 36px;
+  font-size: 32px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*сладер*/
+.slider{
+  height:490px;
+  text-align:center;
+  margin:0 auto;
+}
+input{
+  display:none
+}
+#slide1:checked ~ #slides .inner{
+  margin-left:0;
+}
+#slide2:checked ~ #slides .inner{
+  margin-left:-100%;
+}
+#slide3:checked ~ #slides .inner{
+  margin-left:-200%;
+}
+#slide4:checked ~ #slides .inner{
+  margin-left:-300%;
+}
+#slide5:checked ~ #slides .inner{
+  margin-left:-400%;
+}
+#container{
+  width:100%;
+  
+  overflow:hidden;
+}
+article {
+  width:500px;
+  height:490px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+}
+
+.loc1{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_8.png?raw=true);      
+}
+.loc2{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-7.png?raw=true);      
+}
+.loc3{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320-17.png?raw=true);     
+}
+.loc4{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_3.png?raw=true);      
+}
+.loc5{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_10.png?raw=true);     
+}
+
+#slides .inner{
+  width:500%;
+  line-height:0;
+}
+ 
+#slides article{
+  width:20%;
+  float:left;
+}
+
+#commands{
+  margin:-25% 0 0 0;
+  width:100%;}
+
+#commands label{
+  width: 70px;
+  height: 70px;
+  opacity: 0.1;
+}
+#commands label:hover{
+  opacity:0.7}
+
+#slide1:checked ~ #commands label:nth-child(2),#slide2:checked ~ #commands label:nth-child(3),#slide3:checked ~ #commands label:nth-child(4),#slide4:checked ~ #commands label:nth-child(5),#slide5:checked ~ #commands label:nth-child(1){
+  background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0xMiwyNWExLDEsMCwwLDEtLjcxLS4yOSwxLDEsMCww%0D%0ALDEsMC0xLjQyTDE4LjU5LDE2bC03LjMtNy4yOWExLDEsMCwxLDEsMS40Mi0xLjQybDgsOGExLDEs%0D%0AMCwwLDEsMCwxLjQybC04LDhBMSwxLDAsMCwxLDEyLDI1WiIvPjwvZz48ZyBpZD0iZnJhbWUiPjxy%0D%0AZWN0IGNsYXNzPSJjbHMtMSIgaGVpZ2h0PSIzMiIgd2lkdGg9IjMyIi8+PC9nPjwvc3ZnPgo=') no-repeat;
+  background-color: #f2a007;
+  float:right;
+  display:block;
+}
+
+#slide1:checked ~ #commands label:nth-child(5),#slide2:checked ~ #commands label:nth-child(1),#slide3:checked ~ #commands label:nth-child(2),#slide4:checked ~ #commands label:nth-child(3),#slide5:checked ~ #commands label:nth-child(4){
+  background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0yMCwyNWExLDEsMCwwLDEtLjcxLS4yOWwtOC04YTEs%0D%0AMSwwLDAsMSwwLTEuNDJsOC04YTEsMSwwLDEsMSwxLjQyLDEuNDJMMTMuNDEsMTZsNy4zLDcuMjlh%0D%0AMSwxLDAsMCwxLDAsMS40MkExLDEsMCwwLDEsMjAsMjVaIi8+PC9nPjxnIGlkPSJmcmFtZSI+PHJl%0D%0AY3QgY2xhc3M9ImNscy0xIiBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiLz48L2c+PC9zdmc+Cg==') no-repeat;
+  background-color: #f2a007;
+  float:left;
+  display:block;
+}
+
+.slider{
+  transform:translateZ(0);
+  transition:all 0.5s ease-out;
+}
+#commands label{
+  transform:translateZ(0);
+  transition:opacity 0.2s ease-out;
+}
+
+#commands,#commands label{
+  transform: translateZ(0);
+  transition: all 0.5s ease-out;
+}
+.slider{max-width:500px}
+@media only screen and (max-width:500px){
+  .slider #commands{
+    margin: -25% 0 0 0;
+    width:100%;
+    
+  }
+ 
+  .slider #slides{
+    padding:2px 0;
+  }
+  .slider #commands label{
+    transform: scale(0.7);
+  }
+}
+/*слайдер конец*/
+
+.plus{/*блок преимущества*/
+  background: #fefcf4;
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+
+/*иконки блока преимущества*/
+.delivery svg {
+  width: 72px; 
+  height: 67px;
+  fill: #301309;
+}
+
+.fitting svg {
+  width: 69px; 
+  height: 67px;
+  fill: #301309; 
+}
+
+.local svg {
+  width: 69px; 
+  height: 67px;
+  fill: #301309;
+}
+
+.quality svg {
+  width: 69px; 
+  height: 67px;
+  fill: #301309;
+} /*конец иконки блока преимущества*/
+
+.plus p{
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  width: 124px;
+  margin-top: 20px;
+}
+
+.icon {
+  width: 124px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
