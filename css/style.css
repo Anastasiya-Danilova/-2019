@@ -72,6 +72,75 @@ h1 {
   margin-right: auto;
 }
 
+/*всплывающее меню*/
+.menu{
+   width: 300px;
+   height: 600px;
+   display: flex;
+   flex-wrap: wrap;
+  justify-content: flex-start;
+   background: #FCF9F4;
+   padding-top: 10px;
+   padding-bottom: 25px;
+   padding-right: 10px;
+   padding-left: 10px;
+   box-shadow: 10px 10px 4px rgba(152, 106, 20, 0.6);
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+}
+
+.hid_head {
+   display: flex;
+   width: 310px;
+   align-items: flex-end;
+  }
+
+.close {
+  width: 30px;
+  height: 30px;
+  fill:rgba(48, 19, 9, 0.54);
+  margin-left: auto;
+}
+
+#conceal {
+  width: 70px;
+  align-self: flex-end;
+}
+
+.menu a{
+  text-decoration: none;
+  width: 300px;
+  color: #301309;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.call{
+  font-size: 22px;
+  line-height: 15px;
+  padding-top: 20px;
+}
+
+.call span{
+  width: 300px;
+  font-size: 12px;
+  padding-top: 0px; 
+}
+ #pane {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+#pane:target {
+  display: block;
+}
+
 .intro { /*блок с первым описанием и баннером*/
   display: flex;
   flex-wrap: wrap;
