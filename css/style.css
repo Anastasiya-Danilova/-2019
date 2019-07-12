@@ -861,14 +861,16 @@ h1 {
     max-width: 768px;
     }
   
-  .pryce {
+  .notice, .pryce {
     font-size: 28px;
-    width: 570px;
+    max-width: 500px;
+    width: 80%;
   }
   
-  .notice{
-    font-size: 18px;
-    max-width: 570px;
+  .txt { /*поля формы*/
+    max-width: 500px;
+    width: 80%;
+    
   }
    
 }
