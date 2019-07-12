@@ -836,6 +836,14 @@ h1 {
     font-size: 36px; 
   }
   
+  .reveal {
+   max-width:768px; 
+  }
+  
+  .reveal h3 { /*заголовок блока подробности*/
+    font-size: 24px; 
+  }
+  
   .hidden p {
     max-width: 570px;
     font-size: 18px;
