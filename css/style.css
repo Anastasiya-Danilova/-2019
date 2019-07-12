@@ -724,14 +724,14 @@ footer { /* футер*/
 }
 
 #announce h3{
+  width: 474px;
   font-size: 28px;
   line-height: 35px;
   color: #FCF9F4;
 }
-
-#announce p{
-  width: 190px;
-}
+  #announce .click, #announce p{
+    width: 190px; 
+  }
 
 .header{ /* позиционирование логотип и меню бургер*/
   max-width: 768px;
