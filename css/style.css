@@ -516,13 +516,15 @@ article {
     margin-right: auto;
     margin-bottom: 90px;
 }
-#inline .confirm, #show .confirm{/*текст обработка данных */ 
-   max-width: 280px;
+
+ .confirm {/*текст обработка данных */ 
+   max-width: 290px;
+    width: 80%;
     font-size: 12px;
     margin-left: auto;
     margin-right: auto;
-   margin-bottom: 50px;
-}
+    margin-bottom: 50px;
+  }
 
 .txt { /*поля формы*/
     display: block;
@@ -870,7 +872,13 @@ h1 {
   .txt { /*поля формы*/
     max-width: 500px;
     width: 80%;
-    
+    font-size: 18px;
   }
-   
+  
+  .confirm {
+    max-width: 500px;
+    width: 80%;
+  }
+  
+  
 }
