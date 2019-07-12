@@ -825,9 +825,12 @@ h1 {
    display: block;
   }
   
- .advant {
-  display: none;  
- }
-
+  .advant {
+     display: none;  
+  }
   
+  .benefit {/*блок преимущества*/
+    display: flex;
+  } 
+   
 }
