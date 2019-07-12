@@ -679,12 +679,14 @@ footer { /* футер*/
 }
 
 .social {/* блок с иконками соцсетей*/
+ width: 300px; 
  margin-left: auto;
- margin-right: auto; 
+ margin-right: auto;
+  
 }
 
 .social svg {/* размер иконок*/
-  width: 48px;
+  width: 40px;
 }
 
 .social .heading {/*заголовок соцсетей*/
@@ -695,9 +697,9 @@ footer { /* футер*/
 
 .sk, .fb, .inst, .vk, .wa {/*изменение стилей ссылок на соцсети*/
   text-decoration: none;
-  width: 48px;
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 40px;
+  margin-left: 8px;
+  margin-right: 8px;
   padding-top: 40px;
 } 
 
