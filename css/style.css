@@ -21,9 +21,13 @@ body {
   max-width: 500px;
 }
 
-header {
-  	
-  }
+#announce{
+  display: none;
+}
+
+.intro h2{
+  display: none;
+}
 
 .header{ /* позиционирование логотип и меню бургер*/
   display: flex;
@@ -52,24 +56,31 @@ header {
 
 .post{/*первый экран*/
     	background-color: #f2a007;
-      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/parallasse_320.png?raw=true); 
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320post.png?raw=true); 
     	background-repeat: no-repeat;
     	background-size: cover;
-      background-position: right bottom;
+      background-position: right top;
       padding-top: 240px;
       padding-right: 20px;
       padding-left: 20px;
       padding-bottom: 145px;
 }
 
-h1 {
-  color: #fCf9f4;
-  font-size: 48px;
-  text-align: center;
-  max-width: 500px;
-  min-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
+ h1 {
+   color: #fCf9f4;
+   font-size: 48px;
+   text-align: center;
+   max-width: 500px;
+   min-width: 280px;
+   margin-left: auto;
+   margin-right: auto;
+   background: rgba(242, 160, 7, 0.7);
+   box-shadow: 6px 6px 2px rgba(70, 57, 33, 0.46);
+   
+ }
+
+.unseen{ /*кнопка на постере*/
+ display: none;
 }
 
 /*всплывающее меню*/
@@ -151,7 +162,7 @@ h1 {
 }
 
 .description { /*текст*/
-  max-width: 270px;
+  width: 84%;
   font-size: 16px;
   margin-left: auto;
   margin-right: auto;
@@ -165,6 +176,7 @@ h1 {
   padding-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .click p { /*надпись кнопок*/
@@ -341,10 +353,11 @@ article {
 }
 /*слайдер конец*/
 
-.plus{/*блок преимущества*/
+.benefit {/*блок преимущества*/
   background: #fefcf4;
   padding-top: 90px;
   padding-bottom: 30px;
+  display: none;
 }
 
 /*иконки блока преимущества*/
@@ -389,6 +402,15 @@ article {
   margin-right: auto;
   margin-bottom: 60px;
 }
+
+
+.clip {
+   display: none; 
+  }
+
+ .advant{
+   display: block;  
+  }
 
 /*блок подробности со скрытым текстом*/
 .hidden { /*скрытый текст*/
@@ -678,3 +700,132 @@ footer { /* футер*/
   margin-right: 10px;
   padding-top: 40px;
 } 
+
+@media (min-width: 501px) and  (max-width: 768px) {
+   
+  html{
+    	font-size: 81.5%;
+   } 
+  
+  body {
+   min-width: 501px;
+   max-width: 768px;
+ }
+ 
+  #announce{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#announce h3{
+  font-size: 28px;
+  line-height: 35px;
+  color: #FCF9F4;
+}
+
+#announce p{
+  width: 190px;
+}
+
+.header{ /* позиционирование логотип и меню бургер*/
+  max-width: 768px;
+ }
+
+.logo {
+  font-size: 40px;
+ }
+
+ .bg_menu { /*svg бургера*/
+  width: 35px;
+ }
+
+.post{/*первый экран*/
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/post_ab.png?raw=true); 
+      background-position: center;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 25px;
+      height: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items:  flex-end;
+}
+
+.unseen{ /*кнопка на постере*/
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.unseen .catalog p{
+  margin: 0px;
+}
+
+h1 {
+  max-width: 768px;
+  min-width: 501px;
+  font-size: 58px;
+  line-height: 1.7;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+    
+.description { /*текст*/
+  max-width: 570px;
+  font-size: 18px;
+  
+}
+  
+  .intro h2{
+    display: block;
+    min-width: 501px;
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
+  
+ .intro .button { /*контейнер для кнопок*/
+  display: none;
+}
+
+ .small { /*фон баннера*/
+  
+  display: none;
+}
+ 
+  .benefit{
+    display: block;
+  }
+  
+  .clip{
+   min-width: 501px;
+   max-width:768px;
+   height:400px;
+   display: block;
+   background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/Banner768.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .bonus {
+    width: 100%;
+    height:400px;
+   display: block;
+  }
+  
+ .advant {
+  display: none;  
+ }
+
+  
+}
