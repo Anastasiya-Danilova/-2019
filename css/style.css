@@ -21,11 +21,11 @@ body {
   max-width: 500px;
 }
 
-#announce{
+.announce {
   display: none;
 }
 
-.intro h2{
+.title{
   display: none;
 }
 
@@ -54,6 +54,12 @@ body {
   margin-left: auto;
 }
 
+.bg_menu:hover {
+  width: 35px; 
+  height: 35px;
+  fill: #F2A007;
+}
+
 .post{/*первый экран*/
     	background-color: #f2a007;
       background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320post.png?raw=true); 
@@ -79,6 +85,31 @@ body {
    
  }
 
+.button {/*кнопки*/
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+  height: 50px;
+  background: #FCF9F4;
+  border: 1px solid #F2A007;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px #986A14;
+  color: #F2A007;
+  justify-content: center;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button:hover{ /*наведение на кнопку*/
+  background: linear-gradient(180deg, #F7BF55 0%, #F2A007 100%);
+  color: #FCF9F4;
+  transform: perspective(500px) rotateY(20deg);
+}
+
 .unseen{ /*кнопка на постере*/
  display: none;
 }
@@ -89,7 +120,7 @@ body {
    height: 600px;
    display: flex;
    flex-wrap: wrap;
-  justify-content: flex-start;
+   justify-content: flex-start;
    background: #FCF9F4;
    padding-top: 10px;
    padding-bottom: 25px;
@@ -105,34 +136,57 @@ body {
 
 .hid_head {
    display: flex;
-   width: 310px;
+   width: 100%;
    align-items: flex-end;
   }
 
-.close {
+.close { /*иконка закрыть меню*/
   width: 30px;
   height: 30px;
-  fill:rgba(48, 19, 9, 0.54);
-  margin-left: auto;
+  fill:rgba(48, 19, 9, 0.54); 
 }
 
-#conceal {
+.close:hover {
+  width: 35px; 
+  height: 35px;
+  fill: #D82F40;
+  transform: rotate(15deg);
+}
+
+.conceal {
   width: 70px;
-  align-self: flex-end;
+  text-align: right;
 }
 
-.menu a{
+.logo:hover {
+  transform-origin: 0 80%;
+  transform: perspective(1000px) rotateY(15deg);
+  text-shadow: 0px 2px 4px #986A14;
+}
+
+.direction {/*пункты меню*/
+  display: flex;
+  flex-wrap: wrap;
   text-decoration: none;
+  align-items: center;
   width: 300px;
   color: #301309;
+  font-size: 16px;
   padding-top: 15px;
   padding-bottom: 10px;
+  border-bottom: 1px solid #F2A007; 
+}
+
+.direction:hover {
+ font-size: 18px;
+  color: #F2A007; 
 }
 
 .call{
   font-size: 22px;
   line-height: 15px;
   padding-top: 20px;
+  border-bottom: none;
 }
 
 .call span{
@@ -140,7 +194,7 @@ body {
   font-size: 12px;
   padding-top: 0px; 
 }
- #pane {
+ .canvas {
         display: none;
         position: absolute;
         top: 0;
@@ -148,14 +202,14 @@ body {
         width: 100%;
         height: 100%;
       }
-#pane:target {
+.canvas:target {
   display: block;
 }
 
 .intro { /*блок с первым описанием и баннером*/
   display: flex;
   flex-wrap: wrap;
-  padding-top: 45px;
+  padding-top: 50px;
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 75px;
@@ -169,43 +223,17 @@ body {
   margin-bottom: 25px;
 }
 
-.button { /*контейнер для кнопок*/
-  max-width: 320px;
-  min-width: 280px;
-  padding-top:20px;
-  padding-bottom: 25px;
+.switch .button { /*кнопки в скрытом меню*/
+  width: 260px;
+}
+.show {/*отступ между двойными кнопками*/
+  margin-top: 30px;
+}
+
+.request { /*центрирование кнопок в блоке intro */
   margin-left: auto;
   margin-right: auto;
-  display: block;
-}
-
-.click p { /*надпись кнопок*/
-  width: 280px;
-  padding-top:12px;
-  padding-bottom: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f2a007;
-  margin-left: auto;
-  margin-right: auto;
-  background: #FCF9F4;
-  border: 1px solid #F2A007;
-  box-shadow: 0px 2px 4px #986A14;
-}
-
-.click { /*кнопки*/
-  width: 280px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.click:hover p{ /*наведение на кнопку*/
-  background: linear-gradient(180deg, #F7BF55 0%, #F2A007 100%);
-  color: #FCF9F4;
-}
-
-.catalog p { /*отступ у певой кнопки*/
-  margin-bottom: 38px;
+  margin-top: 50px;
 }
 
 .banner { /*фон баннера*/
@@ -216,8 +244,7 @@ body {
 }
 
 .bonus { /*кнопка баннера*/
- height: 172px;
- font-size: 22px; 
+ font-size: 22px;  
 }
 
 .lookbook {/*блок слайдера*/
@@ -240,25 +267,25 @@ body {
   text-align:center;
   margin:0 auto;
 }
-input{
+.bar{
   display:none
 }
-#slide1:checked ~ #slides .inner{
+.slide1:checked ~ .catalogue .inner{
   margin-left:0;
 }
-#slide2:checked ~ #slides .inner{
+#slide2:checked ~ .catalogue .inner{
   margin-left:-100%;
 }
-#slide3:checked ~ #slides .inner{
+#slide3:checked ~ .catalogue .inner{
   margin-left:-200%;
 }
-#slide4:checked ~ #slides .inner{
+#slide4:checked ~ .catalogue .inner{
   margin-left:-300%;
 }
-#slide5:checked ~ #slides .inner{
+#slide5:checked ~ .catalogue .inner{
   margin-left:-400%;
 }
-#container{
+.cover{
   width:100%;
   
   overflow:hidden;
@@ -287,36 +314,36 @@ article {
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/320/NC320/320_10.png?raw=true);    	
 }
 
-#slides .inner{
+.catalogue .inner{
   width:500%;
   line-height:0;
 }
  
-#slides article{
+.catalogue article{
   width:20%;
   float:left;
 }
 
-#commands{
+.regulation {
   margin:-25% 0 0 0;
   width:100%;}
 
-#commands label{
+.regulation label{
   width: 70px;
   height: 70px;
   opacity: 0.1;
 }
-#commands label:hover{
+.regulation label:hover{
   opacity:0.7}
 
-#slide1:checked ~ #commands label:nth-child(2),#slide2:checked ~ #commands label:nth-child(3),#slide3:checked ~ #commands label:nth-child(4),#slide4:checked ~ #commands label:nth-child(5),#slide5:checked ~ #commands label:nth-child(1){
+#slide1:checked ~ .regulation label:nth-child(2),#slide2:checked ~ .regulation label:nth-child(3),#slide3:checked ~ .regulation label:nth-child(4),#slide4:checked ~ .regulation label:nth-child(5),#slide5:checked ~ .regulation label:nth-child(1){
   background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0xMiwyNWExLDEsMCwwLDEtLjcxLS4yOSwxLDEsMCww%0D%0ALDEsMC0xLjQyTDE4LjU5LDE2bC03LjMtNy4yOWExLDEsMCwxLDEsMS40Mi0xLjQybDgsOGExLDEs%0D%0AMCwwLDEsMCwxLjQybC04LDhBMSwxLDAsMCwxLDEyLDI1WiIvPjwvZz48ZyBpZD0iZnJhbWUiPjxy%0D%0AZWN0IGNsYXNzPSJjbHMtMSIgaGVpZ2h0PSIzMiIgd2lkdGg9IjMyIi8+PC9nPjwvc3ZnPgo=') no-repeat;
   background-color: #f2a007;
   float:right;
   display:block;
 }
 
-#slide1:checked ~ #commands label:nth-child(5),#slide2:checked ~ #commands label:nth-child(1),#slide3:checked ~ #commands label:nth-child(2),#slide4:checked ~ #commands label:nth-child(3),#slide5:checked ~ #commands label:nth-child(4){
+#slide1:checked ~ .regulation label:nth-child(5),#slide2:checked ~ .regulation label:nth-child(1),#slide3:checked ~ .regulation label:nth-child(2),#slide4:checked ~ .regulation label:nth-child(3),#slide5:checked ~ .regulation label:nth-child(4){
   background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0yMCwyNWExLDEsMCwwLDEtLjcxLS4yOWwtOC04YTEs%0D%0AMSwwLDAsMSwwLTEuNDJsOC04YTEsMSwwLDEsMSwxLjQyLDEuNDJMMTMuNDEsMTZsNy4zLDcuMjlh%0D%0AMSwxLDAsMCwxLDAsMS40MkExLDEsMCwwLDEsMjAsMjVaIi8+PC9nPjxnIGlkPSJmcmFtZSI+PHJl%0D%0AY3QgY2xhc3M9ImNscy0xIiBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiLz48L2c+PC9zdmc+Cg==') no-repeat;
   background-color: #f2a007;
   float:left;
@@ -327,27 +354,26 @@ article {
   transform:translateZ(0);
   transition:all 0.5s ease-out;
 }
-#commands label{
+.regulation label{
   transform:translateZ(0);
   transition:opacity 0.2s ease-out;
 }
 
-#commands,#commands label{
+.regulation,.regulation label{
   transform: translateZ(0);
   transition: all 0.5s ease-out;
 }
 .slider{max-width:500px}
-@media only screen and (max-width:500px){
-  .slider #commands{
+@media only screen and (max-width:1440px){
+  .slider .regulation{
     margin: -25% 0 0 0;
-    width:100%;
-    
+    width:100%;  
   }
  
-  .slider #slides{
+  .slider .catalogue{
     padding:2px 0;
   }
-  .slider #commands label{
+  .slider .regulation label{
     transform: scale(0.7);
   }
 }
@@ -360,26 +386,15 @@ article {
   display: none;
 }
 
+.advant{
+   display: block;
+   padding-top: 60px;
+   padding-bottom: 90px;
+   background: #fefcf4;
+  }
+
 /*иконки блока преимущества*/
-.delivery svg {
-  width: 72px; 
-  height: 67px;
-  fill: #301309;
-}
-
-.fitting svg {
-  width: 69px; 
-  height: 67px;
-  fill: #301309; 
-}
-
-.local svg {
-  width: 69px; 
-  height: 67px;
-  fill: #301309;
-}
-
-.quality svg {
+.designation {
   width: 69px; 
   height: 67px;
   fill: #301309;
@@ -403,36 +418,45 @@ article {
   margin-bottom: 60px;
 }
 
+.quality {
+  margin-bottom: 0px; 
+}
 
 .clip {
    display: none; 
   }
 
- .advant{
-   display: block;  
-  }
-
 /*блок подробности со скрытым текстом*/
+.openly{
+  display: none;
+}
+
 .hidden { /*скрытый текст*/
    display: none;
    padding-right: 20px;
    padding-left: 20px;
    padding-bottom: 35px;
    border-bottom: 1px solid rgba(0, 0, 0, 0.54);
-} 
+}
+
 .reveal:focus ~ .hidden, 
 .reveal:active ~ .hidden, 
-.hidden:hover {
+.hidden:hover { /*активность заголвка скрытого текста*/
    display: flex;
    flex-wrap: wrap;
 } 
 
- .reveal svg {
+ .arrow {/*иконки стрелки заголвка скрытого текста*/
   fill: #301309;
   width: 30px; 
   height: 30px;
 }
 
+.arrow:hover {
+  width: 35px; 
+  height: 35px;
+  fill: #F2A007;
+}
 
 .reveal { /*позиционирование заголвка скрытого текста*/
   display: flex;
@@ -445,12 +469,20 @@ article {
   border-bottom: 1px solid rgba(0, 0, 0, 0.54);
 }
 
+.payment .reveal{
+  border-bottom: none;
+}
+
 .reveal:active, .reveal:focus { /*подчёркивание в скрытом тексте*/
   border-bottom: 1px solid rgba(0, 0, 0, 0);
   outline: none;
 }
 
-.reveal p { /*заголовок блока подробности*/
+.reveal:hover{
+  background: rgba(0, 134, 68, 0.13);
+}
+
+.reveal h3 { /*заголовок блока подробности*/
   font-weight: bold;
   font-size: 20px;
   
@@ -460,7 +492,7 @@ article {
   font-weight: 500;
 }
 
-.hidden a {
+.presentation {
   width: 450px;
   font-size: 16px;
   font-weight: 500;
@@ -468,6 +500,16 @@ article {
   padding-right: 25px;
   margin-left: auto;
   color: #301309; 
+}
+
+.presentation:hover {
+  font-size: 18px;
+  color: #F2A007; 
+}
+
+.presentation:visited {
+   color: #D82F40;
+  font-size: 18px;
 }
 
 .hidden p {
@@ -478,7 +520,7 @@ article {
   padding-bottom: 25px;
 }
 .payment .hidden {
- border-bottom-color: transparent; 
+ border-bottom: transparent; 
 }
 
 /* конец блока со скрытым текстом*/
@@ -486,12 +528,12 @@ article {
 /* Форма предзакза */
 *:focus {outline: none;}
 
-#inline {/*контейнер для формы*/ 
+.order {/*контейнер для формы*/ 
     background: #FEFCF4;
     margin-top: -2px;
 }
 
-#inline, #show{
+.order, .demonstration{
     max-width: 500px;
     padding-top: 70px;
     padding-bottom: 65px;
@@ -509,22 +551,21 @@ article {
     margin-bottom: 45px;
 }
 
-#inline .notice, #show .notice{ /*текст перед формой*/ 
+.order .notice, .demonstration .notice{ /*текст перед формой*/ 
     max-width: 450px;
     font-size: 16px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 90px;
 }
-
- .confirm {/*текст обработка данных */ 
+.confirm {/*текст обработка данных */ 
    max-width: 290px;
-    width: 80%;
+  width: 80%;
     font-size: 12px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
-  }
+   margin-bottom: 50px;
+}
 
 .txt { /*поля формы*/
     display: block;
@@ -539,6 +580,10 @@ article {
     font-size: 16px;
     font-family: 'PT Root UI';
     background: rgba(252, 249, 244, 0.05); 
+}
+
+.top {/*отступ у верхнего поля*/
+ margin-top: 0px;  
 }
 
 .txt:focus {
@@ -563,12 +608,7 @@ article {
  border-color: #008644;
 }
 
-#show {/*контейнер для формы*/ 
-    max-width: 500px;
-    padding-top: 70px;
-    padding-bottom: 65px;
-    padding-right: 20px;
-    padding-left: 20px;
+.demonstration {/*контейнер для формы*/ 
     margin-top: -2px;
     background-color: transparent;
 }
@@ -631,13 +671,20 @@ footer { /* футер*/
   justify-content: center;
   background-color: #FCF9F4;
   padding-top: 45px;
-  padding-bottom: 45px;
+  padding-bottom: 100px;
   padding-right: 20px;
   padding-left: 20px;
 }
 
+.boxing, .wrap, .packing, .sign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .foot {/*логотип футера*/
   width: 280px;
+  max-width: 500px;
   font-weight: bold;
   font-size: 36px;
   text-align: center;
@@ -646,13 +693,14 @@ footer { /* футер*/
   margin-bottom: 45px;
 }
 
-
 .heading { /* заголовки футера*/
   width: 280px;
   max-width: 500px;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
   margin-bottom: 20px;
 }
@@ -660,6 +708,8 @@ footer { /* футер*/
 .tel .heading { /* изменение стилей номера тел.*/
   font-weight: 400;
   font-size: 36px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 0px;
 }
 
@@ -683,38 +733,43 @@ footer { /* футер*/
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+  margin-top: -120px;
+}
+
+.scrb {
+ margin-top: 80px;
 }
 
 .social {/* блок с иконками соцсетей*/
  width: 300px; 
  margin-left: auto;
  margin-right: auto;
-  
+ padding-top: 50px; 
 }
 
-.social svg {/* размер иконок*/
+.pepole {/* размер иконок*/
   width: 40px;
 }
 
 .social .heading {/*заголовок соцсетей*/
   margin-bottom: 40px;
   margin-left: auto;
- margin-right: auto;
+  margin-right: auto;
+  margin-top: 0px;
 }
 
-.sk, .fb, .inst, .vk, .wa {/*изменение стилей ссылок на соцсети*/
+.opium {/*изменение стилей ссылок на соцсети*/
   text-decoration: none;
   width: 40px;
   margin-left: 8px;
   margin-right: 8px;
-  padding-top: 40px;
 } 
 
 .map {
   display: none;
 }
 
-@media (min-width: 501px) and  (max-width: 768px) {
+@media (min-width: 501px) and  (max-width: 810px) {
    
   html{
     	font-size: 81.5%;
@@ -722,30 +777,43 @@ footer { /* футер*/
   
   body {
    min-width: 501px;
-   max-width: 768px;
+   max-width: 920px;
  }
  
-  #announce{
+  .announce {/*баннер прийти на показ*/
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:space-between;
   background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-#announce h3{
+.announce h3{
   width: 474px;
   font-size: 28px;
   line-height: 35px;
   color: #FCF9F4;
 }
-  #announce .click, #announce p{
+ .announce p{
     width: 190px; 
+  }
+  
+  .button {
+   height: 60px; 
+  }
+  
+  .opening {
+   width: 190px;
+   height: 50px;
+   margin-left: 0;
+   margin-right: 0;
   }
 
 .header{ /* позиционирование логотип и меню бургер*/
-  max-width: 768px;
+  max-width: 920px;
  }
 
 .logo {
@@ -755,15 +823,60 @@ footer { /* футер*/
  .bg_menu { /*svg бургера*/
   width: 35px;
  }
+  .bg_menu:hover {
+    width: 40px; 
+    height: 40px;
+  }
+  
+  /*всплывающее меню*/
+  .menu{
+    width: 300px;
+   height: 880px;
+  }
+  
+ .hid_head {
+   display: flex;
+   width: 100%;
+   align-items: center;
+  } 
+  
+  .close { /*иконка закрыть меню*/
+  width: 35px;
+  height: 35px;
+}
 
+.close:hover {
+  width: 40px; 
+  height: 40px;
+}
+  
+  .direction {/*пункты меню*/
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .call{
+  font-size: 26px;
+  line-height: 5px;
+  border-bottom: none;
+}
+
+  .call:hover{
+    font-size: 24px;
+  }
+  
+  .switch { /*кнопки в скрытом меню*/
+  padding-top: 30px;
+}
+  
 .post{/*первый экран*/
       background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/post_ab.png?raw=true); 
       background-position: center;
       padding-top: 40px;
       padding-right: 20px;
       padding-left: 20px;
-      padding-bottom: 25px;
-      height: 600px;
+      padding-bottom: 50px;
+      height: 700px;
       display: flex;
       flex-wrap: wrap;
       align-items:  flex-end;
@@ -773,10 +886,6 @@ footer { /* футер*/
  display: block;
  margin-left: auto;
  margin-right: auto;
-}
-
-.unseen .catalog p{
-  margin: 0px;
 }
 
 h1 {
@@ -791,85 +900,135 @@ h1 {
     
 .description { /*текст*/
   max-width: 570px;
-  font-size: 18px;
-  
+  font-size: 18px; 
 }
   
-  .intro h2{
+  .title{
     display: block;
     min-width: 501px;
     width: 84%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
-    font-size: 36px;
     text-align: center;
+    font-size: 36px;
   }
   
- .intro .button { /*контейнер для кнопок*/
+ .request { /*контейнер для кнопок*/
   display: none;
 }
 
- .small { /*фон баннера*/ 
+ .small { /*скрытый банер*/ 
   display: none;
 }
   
-  .clip{
-    min-width: 501px;
-    max-width:768px;
-    height:400px;
-    display: block;
-    background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+ .clip { /*банер коллаж*/
+   min-width: 501px;
+   max-width: 920px;
+   height:420px;
+   display: block;
+   background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/Banner868_454.png?raw=true);
+    box-shadow: 6px 6px 6px #986A14;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    transform-style: preserve-3d;
+   transition: all 1s ease-in-out;
   }
   
-  .bonus {
+  .clip:hover {
+  transform: rotateX(-20deg);
+  }
+  
+ .bonus { /* ссылка банера*/
     width: 100%;
     height:400px;
     display: block;
   }
   
-  .advant {
-     display: none;  
+  .advant { /* скрытый блок преимущества*/
+    display: none;  
   }
   
   .benefit {/*блок преимущества*/
     display: flex;
+    align-items: center;
+  }
+  
+  .quality { /*выравнивание последней иконки*/ 
+    margin-bottom: 60px;
   }
   
   .look {
-    font-size: 36px; 
+   font-size: 36px; 
+  }
+  
+  .slider{
+  height:800px;
+}
+ article {
+  width: 600px;
+  height:800px;
+} 
+  
+  .loc1{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look1.png?raw=true);    	
+}
+.loc2{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look2.png?raw=true);    	
+}
+.loc3{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/looc3.png?raw=true);    	
+}
+.loc4{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look5.png?raw=true);    	
+}
+.loc5{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look8.png?raw=true);    	
+}
+  .slider{
+  max-width:700px}
+  
+  .detailed {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
   
   .reveal {
-   max-width:768px; 
+   max-width: 920px; 
   }
+  
   
   .reveal h3 { /*заголовок блока подробности*/
     font-size: 24px; 
   }
   
-  .hidden p {
+  .hidden p { /*текст блока подробности*/
     max-width: 570px;
     font-size: 18px;
   }
   
-  .hidden a {
-    width: 570px;
+  .presentation {/*ссылка на презентацию*/
     font-size: 18px;   
   }
+  .presentation:hover {
+    font-size: 20px; 
+  }
   
-  #inline, #show  {/*контейнер для формы*/ 
-    max-width: 768px;
-    }
+  .order, .demonstration  {/*контейнер для формы*/ 
+    max-width: 920px;
+    } 
   
-  .notice, .pryce {
+  .pryce {
     font-size: 28px;
     max-width: 500px;
     width: 80%;
+  }
+  
+  .order .notice, .demonstration .notice{ /*текст перед формой*/ 
+    max-width: 500px;
+    font-size: 18px;
   }
   
   .txt { /*поля формы*/
@@ -883,5 +1042,663 @@ h1 {
     width: 80%;
   }
   
+/* футер*/
+footer { /* футер*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #FCF9F4;
+  padding-top: 45px;
+  padding-bottom: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.boxing, .wrap, .packing, .sign {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.foot {/*логотип футера*/
+  width: 100%;
+  max-width: 500px;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+}
   
+  .tel{/*ссылка позвонить*/
+    width: 280px;
+    text-decoration: none;
+    color: #301309;
+  }
+  
+  .tel:hover{
+   font-size: 20px;
+   color: #F2A007; 
+  }
+
+.heading { /* заголовки футера*/
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.tel .heading { /* изменение стилей номера тел.*/
+  font-weight: 400;
+  font-size: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+  
+  .website {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.website .heading { /*изменение стилей заголовка "на сайт"*/
+  font-weight: 500;
+  font-size: 36px;
+}
+  
+  .contacts, .expo{
+     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.tel p,.contacts p, .expo p { /* текст*/
+  width: 280px;
+  font-size: 18px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+} 
+
+.sign  .confirm{/*стиль подтверждение на обработку данных*/
+  width: 280px;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: -120px;
+}
+  
+  .sign { /*блок подписка*/
+ 
+  width: 100%;
+  justify-content: ctnter;
+  padding-top: 30px;
+ }
+  
+  .subscribe{   
+    margin-top: 20px;
+     margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .subscribe .txt {
+        width: 280px;
+     margin-right: auto;
+    margin-left: auto;
+  }
+  
+.scrb {
+ margin-top: 80px;
+}
+
+.social {/* блок с иконками соцсетей*/
+ width: 300px; 
+ margin-left: auto;
+ margin-right: auto;
+ padding-top: 50px; 
+}
+
+.pepole {/* размер иконок*/
+  width: 40px;
+}
+
+.social .heading {/*заголовок соцсетей*/
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+}
+
+.opium {/*изменение стилей ссылок на соцсети*/
+  text-decoration: none;
+  width: 40px;
+  margin-left: 8px;
+  margin-right: 8px;
+} 
+
+.map {
+  display: none;
+}
+}
+
+@media (min-width: 811px) and  (max-width: 1200px) {
+   
+  html{
+    	font-size: 85%;
+   } 
+  
+  body {
+   min-width: 921px;
+   max-width: 1440px;   
+ }
+ 
+  .announce {/*баннер прийти на показ*/
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+ .announce h3{
+  width: 790px;
+  font-size: 44px;
+  line-height: 35px;
+  color: #FCF9F4;
+}
+ 
+  .button {
+   height: 60px;
+   font-size: 24px;
+  }
+  
+  .opening {
+   width: 270px;
+   margin-left: 0;
+   margin-right: 0;
+  }
+
+.header{ /* позиционирование логотип и меню бургер*/
+  max-width: 1200px;
+ }
+
+.logo {
+  width: 200px;
+  font-size: 48px;
+  margin-left: auto; 
+  margin-right: auto;
+ }
+
+ .bg_menu { /*svg бургера*/
+  width: 45px;
+  height: 45px;
+ }
+ .bg_menu:hover {
+    width: 50px; 
+    height: 50px;
+  }
+  
+  /*всплывающее меню*/
+  .menu{
+    width: 400px;
+   height: 1080px;
+  }
+  
+ .hid_head {
+   display: flex;
+   width: 100%;
+   align-items: center;
+  } 
+  
+  .conceal {
+  width: 50%;
+}
+  
+  .close { /*иконка закрыть меню*/
+  width: 40px;
+  height: 40px;
+}
+
+.close:hover {
+  width: 45px; 
+  height: 45px;
+}
+  
+  .direction {/*пункты меню*/
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .direction:hover{
+    font-size: 26px;
+  }
+  
+  .call{
+  font-size: 28px;
+  line-height: 5px;
+  border-bottom: none;
+}
+
+  .call:hover{
+    font-size: 26px;
+  }
+  
+  .switch { /*кнопки в скрытом меню*/
+  padding-top: 30px;
+}
+  
+  .post{/*первый экран*/
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/пост_a.png?raw=true); 
+      background-position: center;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 50px;
+      height: 850px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items:  flex-end;
+}
+
+  .unseen{ /*кнопка на постере*/
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+   h1 {
+  max-width: 975px;
+  min-width: 501px;
+  font-size: 96px;
+  line-height: 1.7;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
+    
+  .description { /*текст*/
+  max-width: 750px;
+  font-size: 22px; 
+}
+  
+  .title{
+    font-size: 48px;
+    display: block;
+    min-width: 501px;
+    width: 84%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+ .request { /*контейнер для кнопок*/
+  display: none;
+}
+
+ .small { /*скрытый банер*/ 
+  display: none;
+}
+  
+ .clip { /*банер коллаж*/
+   min-width: 920px;
+   max-width: 1200px;
+   height:630px;
+   display: block;
+   background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonus.png?raw=true);
+    box-shadow: 6px 6px 6px #986A14;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   transform-style: preserve-3d;
+   transition: all 1s ease-in-out;
+  }
+  
+  .clip:hover {
+  transform: rotateX(-20deg);
+  }
+  
+ .bonus { /* ссылка банера*/
+    width: 100%;
+    height:400px;
+    height:630px;
+    display: block;
+  }
+  
+  .advant { /* скрытый блок преимущества*/
+    display: none;  
+  }
+  
+  .benefit {/*блок преимущества*/
+    display: flex;
+    align-items: center;
+  }
+  
+  .designation {/*иконки преимущества*/
+  width: 80px; 
+  height: 78px;
+ } 
+ 
+  .sticker{/*текст блока преимущества*/
+    font-size: 20px;
+  }
+  
+  .quality { /*выравнивание последней иконки*/ 
+    margin-bottom: 60px;
+  }
+  
+  .look {
+   font-size: 48px; 
+  }
+  
+  .slider{
+  height:800px;
+}
+ article {
+  width: 600px;
+  height:800px;
+} 
+  
+  .regulation label{
+    width: 90px;
+    height: 90px;
+  }
+  
+  .loc1{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look1.png?raw=true);    	
+}
+  .loc2{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look2.png?raw=true);    	
+}
+  .loc3{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/looc3.png?raw=true);    	
+}
+  .loc4{
+    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look5.png?raw=true);    	
+}
+  .loc5{
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look8.png?raw=true);    	
+  }
+  .slider{
+  max-width:700px}
+  
+  .detailed {/*спрятать блок для мобильных*/
+    display: none;
+  }
+  
+  .openly {/*контейнер для десктопа*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 190px;
+  }
+  
+  .atelier {/* подробности-контейнер для картинки и текста*/
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    align-items: flex-start;
+  }
+  
+  .workshop {/*положение картинки*/
+    width: calc(50vw - 10px);
+  }
+  
+  .studio{/*контейнет для текста*/
+    width: calc(50vw - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+  } 
+  
+  .studio h4 {/*подробности-заголовки*/
+   font-size: 30px;
+   margin-bottom: 50px; 
+  }  
+  
+  .income {/*подробности-текст*/
+   font-size: 20px;
+   margin-bottom: 30px;  
+  }
+  .income span{
+    font-weight: bold;
+  }
+  
+  .presentation { /*ссылка на презентацию*/
+    font-size: 20px;
+  }
+  
+  .presentation:hover {
+    font-size: 22px;
+  }
+
+  .order, .demonstration  {/*контейнер для формы*/ 
+    max-width: 1200px;
+    } 
+  
+  .blank {
+    max-width: 770px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pryce {
+    font-size: 40px;
+    min-width: 770px;
+    width: 80%;
+  }
+  
+  .order .notice, .demonstration .notice{ /*текст перед формой*/ 
+    max-width: 770px;
+    width: 80%;
+    font-size: 22px;
+  }
+  
+  .txt { /*поля формы*/
+    width: 100%;
+    font-size: 22px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .confirm {
+    width: 100%;
+    min-width: 600px;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .catalog {
+    margin-right: 0;
+  } 
+  
+  
+ footer { /* футер*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #FCF9F4;
+  padding-top: 70px;
+  padding-bottom: 45px;
+  
+}
+
+.boxing {
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.foot {/*логотип футера*/
+  width: 145px;
+  max-width: 250px;
+  font-weight: bold;
+  font-size: 54px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+  .tel {/*ссылка позвонить*/
+    width: 280px;
+    justify-content: center;
+    text-decoration: none;
+    color: #301309;
+  }
+  
+  .tel:hover{
+   font-size: 20px;
+   color: #F2A007; 
+  }
+ 
+.tel .heading { /* изменение стилей номера тел.*/
+  width: 280px;
+  max-width: 280px;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 0px;
+}
+.tel p{
+  font-size: 18px;
+  width: 280px;
+  text-align: left;
+  margin: 0;
+}
+  
+.container{
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}  
+
+.wrap {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 0px;
+}
+
+.wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
+ width: 420px ;
+ margin-bottom: 25px;
+}
+  .map {
+    display: block;
+     width: 60vw;
+  }
+  
+  .mapping {
+    width: 60vw;
+  }
+  
+.social {/* блок с иконками соцсетей*/
+ width: 420px; 
+ margin-left: 0;
+ margin-right: 0;
+ margin-bottom: 25px;
+ padding-top: 0px;
+}
+
+.pepole {/* размер иконок*/
+  width: 45px;
+}
+
+.heading { /* заголовки футера*/
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0px; 
+}
+
+.packing {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+ }
+
+.packing .heading {
+  margin-bottom: 30px;
+}
+
+.website .heading { /*изменение стилей заголовка "на сайт"*/
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.contacts p, .expo p { /* текст*/
+  width: 340px ;
+  font-size: 22px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+} 
+
+.website .button{
+ width: 100%;
+ margin-left: 0;
+ margin-right: 0; 
+}
+
+ .sign { /*блок подписка*/
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 70px;
+ }
+
+.subscribe {/* форма подписки*/
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.subscribe .txt {/* поле подписки*/
+  width: 70%;
+  height: 60px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+  
+.scrb {
+  width: 30%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ }
+  
+  .sign .confirm {  
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+  }  
 }
