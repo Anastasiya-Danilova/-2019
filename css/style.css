@@ -1201,7 +1201,7 @@ footer { /* футер*/
 }
 }
 
-@media (min-width: 811px) and  (max-width: 1200px) {
+@media (min-width: 811px) and  (max-width: 1309px) {
    
   html{
     	font-size: 85%;
@@ -1242,7 +1242,7 @@ footer { /* футер*/
   }
 
 .header{ /* позиционирование логотип и меню бургер*/
-  max-width: 1200px;
+  max-width: 1309px;
  }
 
 .logo {
@@ -1344,7 +1344,7 @@ footer { /* футер*/
   font-size: 22px; 
 }
   
-  .title{
+  .title{/*заголовок лето будет*/
     font-size: 48px;
     display: block;
     min-width: 501px;
@@ -1364,8 +1364,8 @@ footer { /* футер*/
 }
   
  .clip { /*банер коллаж*/
-   min-width: 920px;
-   max-width: 1200px;
+   min-width: 811px;
+   max-width: 1309px;
    height:630px;
    display: block;
    background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
@@ -1499,7 +1499,7 @@ footer { /* футер*/
   }
 
   .order, .demonstration  {/*контейнер для формы*/ 
-    max-width: 1200px;
+    max-width: 1309px;
     } 
   
   .blank {
@@ -1712,4 +1712,4 @@ footer { /* футер*/
   margin-right: 0;
   margin-top: 10px;
   }  
-}
+} 
