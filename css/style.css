@@ -944,12 +944,13 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    transform-style: preserve-3d;
-   transition: all 1s ease-in-out;
   }
   
-  .clip:hover {
-  transform: rotateX(-20deg);
+ .bon {
+    width: 300px;
+    height: 80px;
+   margin-top: 200px;
+    margin-left: 60%;
   }
   
  .bonus { /* ссылка банера*/
@@ -1374,12 +1375,13 @@ footer { /* футер*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-   transform-style: preserve-3d;
-   transition: all 1s ease-in-out;
   }
   
-  .clip:hover {
-  transform: rotateX(-20deg);
+  .bon {
+    width: 300px;
+    height: 80px;
+   margin-top: 200px;
+    margin-left: 60%;
   }
   
  .bonus { /* ссылка банера*/
