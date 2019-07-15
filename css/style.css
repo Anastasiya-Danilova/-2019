@@ -261,6 +261,10 @@ body {
   margin-right: auto;
 }
 
+.gallery{
+    display: none;
+  }
+
 /*сладер*/
 .slider{
   height:490px;
@@ -400,7 +404,7 @@ article {
   fill: #301309;
 } /*конец иконки блока преимущества*/
 
-.plus p{/*текст блока преимущества*/
+.sticker {/*текст блока преимущества*/
   font-size: 16px;
   text-align: center;
   font-weight: 500;
@@ -762,6 +766,10 @@ footer { /* футер*/
   width: 40px;
 }
 
+.pepole:hover {
+    width: 45px;
+  }
+
 .social .heading {/*заголовок соцсетей*/
   margin-bottom: 40px;
   margin-left: auto;
@@ -790,12 +798,15 @@ footer { /* футер*/
    min-width: 501px;
    max-width: 920px;
  }
+  
+  .billboard {/*баннер заливка*/
+    background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  }
  
   .announce {/*баннер прийти на показ*/
   display: flex;
   align-items: center;
   justify-content:space-between;
-  background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 20px;
@@ -935,21 +946,27 @@ h1 {
   
  .clip { /*банер коллаж*/
    min-width: 501px;
-   max-width: 920px;
-   height:420px;
+   max-width: 100vw;
+   height: 420px;
    display: block;
    background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bon.png?raw=true);
-    box-shadow: 6px 6px 6px #986A14;
+   box-shadow: 6px 6px 6px #986A14;
+   padding-top: 0px;
+   padding-bottom: 0px
+  }
+  
+  .transparence {
+    height: 420px;
+   background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
   }
-  
  .bon {
     width: 300px;
     height: 80px;
-   margin-top: 200px;
+   margin-top: 260px;
     margin-left: 60%;
   }
   
@@ -974,6 +991,10 @@ h1 {
   
   .look {
    font-size: 36px; 
+  }
+  
+  .gallery{
+    display: none;
   }
   
   .slider{
@@ -1173,15 +1194,23 @@ footer { /* футер*/
 }
 
 .social {/* блок с иконками соцсетей*/
- width: 300px; 
+ display: flex;
+  flex-wrap: wrap;
+ width: 70%;
+ justify-content: center;
  margin-left: auto;
  margin-right: auto;
  padding-top: 50px; 
 }
 
-.pepole {/* размер иконок*/
-  width: 40px;
-}
+  .pepole {/* размер иконок*/
+    width: 45px;
+  }
+ 
+  .pepole:hover {
+    width: 50px;
+  }
+  
 
 .social .heading {/*заголовок соцсетей*/
   margin-bottom: 40px;
@@ -1212,12 +1241,15 @@ footer { /* футер*/
    min-width: 921px;
    max-width: 1440px;   
  }
+  
+ .billboard {/*баннер заливка*/
+    background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  }
  
   .announce {/*баннер прийти на показ*/
   display: flex;
   align-items: center;
   justify-content:space-between;
-  background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -1291,6 +1323,7 @@ footer { /* футер*/
   .direction {/*пункты меню*/
     text-decoration: none;
     font-size: 24px;
+    width: 100%;
   }
   
   .direction:hover{
@@ -1366,21 +1399,27 @@ footer { /* футер*/
   
  .clip { /*банер коллаж*/
    min-width: 811px;
-   max-width: 1309px;
-   height:630px;
+   max-width: 100vw;
+   height: 500px;
    display: block;
    background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
-    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bon.png?raw=true);
-    box-shadow: 6px 6px 6px #986A14;
+   box-shadow: 6px 6px 6px #986A14;
+   padding-top: 0px;
+   padding-bottom: 0px
+  }
+  
+  .transparence {
+    height: 500px;
+   background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
   }
-  
-  .bon {
+ .bon {
     width: 300px;
     height: 80px;
-   margin-top: 360px;
+   margin-top: 330px;
     margin-left: 60%;
   }
   
@@ -1398,15 +1437,21 @@ footer { /* футер*/
   .benefit {/*блок преимущества*/
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .icon {
+    width: 160px; 
   }
   
   .designation {/*иконки преимущества*/
-  width: 80px; 
-  height: 78px;
+    width: 80px; 
+    height: 78px;
  } 
  
   .sticker{/*текст блока преимущества*/
     font-size: 20px;
+    width: 160px;
   }
   
   .quality { /*выравнивание последней иконки*/ 
@@ -1415,6 +1460,10 @@ footer { /* футер*/
   
   .look {
    font-size: 48px; 
+  }
+  
+  .gallery{
+    display: none;
   }
   
   .slider{
@@ -1502,7 +1551,7 @@ footer { /* футер*/
 
   .order, .demonstration  {/*контейнер для формы*/ 
     max-width: 1309px;
-    } 
+    }
   
   .blank {
     max-width: 770px;
@@ -1552,22 +1601,16 @@ footer { /* футер*/
   
 }
 
-.boxing {
-  width: 100%; 
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 70px;
-}
 
 .foot {/*логотип футера*/
-  width: 145px;
+  width: 100%;
   max-width: 250px;
   font-weight: bold;
   font-size: 54px;
   text-align: left;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 0;
+  margin-bottom: 90px;
 }
 
   .tel {/*ссылка позвонить*/
@@ -1575,6 +1618,7 @@ footer { /* футер*/
     justify-content: center;
     text-decoration: none;
     color: #301309;
+    margin-bottom: 70px;
   }
   
   .tel:hover{
@@ -1582,21 +1626,21 @@ footer { /* футер*/
    color: #F2A007; 
   }
  
-.tel .heading { /* изменение стилей номера тел.*/
+ .tel .heading { /* изменение стилей номера тел.*/
   width: 280px;
   max-width: 280px;
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 0px;
 }
-.tel p{
+ .tel p{
   font-size: 18px;
   width: 280px;
   text-align: left;
-  margin: 0;
+  margin-top: -30px;
 }
   
-.container{
+ .container{
   width: 100%; 
   display: flex;
   justify-content: space-between;
@@ -1604,15 +1648,16 @@ footer { /* футер*/
   margin-bottom: 70px;
 }  
 
-.wrap {
+  .wrap {
   width: 60%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;  
   margin-bottom: 0px;
 }
 
-.wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
+  .wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
  width: 420px ;
  margin-bottom: 25px;
 }
@@ -1625,17 +1670,22 @@ footer { /* футер*/
     width: 60vw;
   }
   
-.social {/* блок с иконками соцсетей*/
- width: 420px; 
- margin-left: 0;
- margin-right: 0;
- margin-bottom: 25px;
- padding-top: 0px;
-}
+ .social {/* блок с иконками соцсетей*/
+    width: 420px; 
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 25px;
+    padding-top: 0px;
+ }
 
-.pepole {/* размер иконок*/
-  width: 45px;
-}
+
+  .pepole {/* размер иконок*/
+    width: 50px;
+  }
+ 
+  .pepole:hover {
+    width: 45px;
+  }
 
 .heading { /* заголовки футера*/
   font-weight: bold;
@@ -1669,7 +1719,12 @@ footer { /* футер*/
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 20px;
-} 
+}
+  
+  .dialup span{
+    font-size: 16px;
+    line-height: 0.2;
+  }
 
 .website .button{
  width: 100%;
@@ -1703,6 +1758,598 @@ footer { /* футер*/
   
 .scrb {
   width: 30%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+ }
+  
+  .sign .confirm {  
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+  }  
+} 
+
+@media (min-width: 1310px) {
+   
+  html{
+    	font-size: 100%;
+   } 
+  
+  body {
+   min-width: 921px;
+   max-width: 100vw;   
+ }
+ 
+  .billboard {/*баннер заливка*/
+    background: linear-gradient(166.12deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+  }
+  
+  .announce {/*баннер прийти на показ*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100vw;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .announce h3{
+  font-size: ;  
+  width: 790px;
+  font-size: 44px;
+  line-height: 35px;
+  color: #FCF9F4;
+}
+ 
+  .button {
+   height: 60px;
+   font-size: 24px;
+  }
+  
+  .opening {
+   width: 270px;
+   margin-left: 0;
+   margin-right: 0;
+  }
+
+.header{ /* позиционирование логотип и меню бургер*/
+  max-width: 100vw;
+  width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  
+ }
+
+.logo {
+  width: 200px;
+  font-size: 48px;
+  margin-left: auto; 
+  margin-right: auto;
+ }
+
+ .bg_menu { /*svg бургера*/
+  width: 45px;
+  height: 45px;
+ }
+ .bg_menu:hover {
+    width: 50px; 
+    height: 50px;
+  }
+  
+  /*всплывающее меню*/
+  .menu{
+    width: 400px;
+   height: 1080px;
+  }
+  
+ .hid_head {
+   display: flex;
+   width: 100%;
+   align-items: center;
+  } 
+  
+  .conceal {
+  width: 50%;
+}
+  
+  .close { /*иконка закрыть меню*/
+  width: 40px;
+  height: 40px;
+}
+
+.close:hover {
+  width: 45px; 
+  height: 45px;
+}
+  
+  .direction {/*пункты меню*/
+    text-decoration: none;
+    font-size: 24px;
+    width: 100%;
+  }
+  
+  .direction:hover{
+    font-size: 26px;
+  }
+  
+  .call{
+  font-size: 28px;
+  line-height: 5px;
+  border-bottom: none;
+ }
+
+  .call:hover{
+    font-size: 26px;
+  }
+  
+  .switch { /* контейнер для кнопок в скрытом меню*/
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+  }
+  
+  .catalog, .show {/*кнопки в скрытом меню*/
+    width: 280px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .post{/*первый экран*/
+      background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/пост_a.png?raw=true); 
+      background-position: center;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 50px;
+      height: 850px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items:  flex-end;
+  }
+
+  .unseen{ /*кнопка на постере*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 80%;
+}
+
+   h1 {
+    max-width: 975px;
+    min-width: 80%;
+    font-size: 96px;
+    line-height: 1.7;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+  .intro {
+    max-width: 975px;
+    min-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    
+  .description { /*текст*/
+  max-width: 975px;
+  font-size: 22px; 
+}
+  
+  .title{/*заголовок лето будет*/
+    font-size: 48px;
+    display: block;
+    max-width: 975px;
+    min-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+ .request { /*контейнер для кнопок*/
+  display: none;
+}
+
+ .small { /*скрытый банер*/ 
+  display: none;
+}
+  
+ .clip { /*банер коллаж*/
+   min-width: 811px;
+   max-width: 100vw;
+   height: 650px;
+   display: block;
+   background: linear-gradient(128.45deg, #73D29A 0%, #F2CF66 55.24%, #EF5558 99.23%);
+   box-shadow: 6px 6px 6px #986A14;
+   padding-top: 0px;
+   padding-bottom: 0px
+  }
+  
+  .transparence {
+    height: 650px;
+   background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    display: flex;
+  }
+  
+ .bon {
+    width: 300px;
+    height: 80px;
+    margin-top: 420px;
+    margin-left: 60%;
+  }
+  
+ .bonus { /* ссылка банера*/
+    width: 100%;
+    height:400px;
+    height:630px;
+    display: block;
+  }
+  
+  .advant { /* скрытый блок преимущества*/
+    display: none;  
+  }
+  
+  .benefit {/*блок преимущества*/
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .designation {/*иконки преимущества*/
+  width: 90px; 
+  height: 88px;
+ } 
+ 
+  .icon {
+    width: 200px; 
+  }
+  
+  .sticker {/*текст блока преимущества*/
+    font-size: 22px;
+     width: 200px; 
+  }
+  
+  .quality { /*выравнивание последней иконки*/ 
+    margin-bottom: 60px;
+  }
+  
+  .look {
+   font-size: 48px; 
+  }
+  
+  .slider{
+  display: none;
+}
+  
+ .gallery{
+    display: block;
+    padding-bottom: 100px;
+  }
+  
+  .passage {
+    width: 320px;
+  }
+  
+  
+  .band {
+    width: 1200px;
+    display: flex;
+    height: 460px;
+    justify-content: space-between;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 90px;
+    margin-left: auto;
+  }
+  
+  .dress {
+    width: 575px;
+    height: 460px;
+    margin: 10px;
+  }
+  .garb {
+    width: 270px;
+    height: 460px;
+    margin: 10px;
+  }
+  
+  .clothes {
+    width: 300px;
+    height: 460px;
+    margin: 10px;
+  }
+  
+  
+  
+ 
+  
+  .detailed {/*спрятать блок для мобильных*/
+    display: none;
+  }
+  
+  .openly {/*контейнер для десктопа*/
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 190px;
+  }
+  
+  .atelier {/* подробности-контейнер для картинки и текста*/
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+    align-items: center;
+  }
+  
+  .workshop {/*положение картинки*/
+    width: calc(50vw - 10px);
+  }
+  
+  .studio{/*контейнет для текста*/
+    width: calc(50vw - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+  } 
+  
+  .studio h4 {/*подробности-заголовки*/
+    width: 85%;
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }  
+  
+  .income {/*подробности-текст*/
+    width: 85%;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .income span{
+    font-weight: bold;
+  }
+  
+  .presentation { /*ссылка на презентацию*/
+    font-size: 20px;
+  }
+  
+  .presentation:hover {
+    font-size: 22px;
+  }
+
+  .order, .demonstration  {/*контейнер для формы*/ 
+    max-width: 100vw;
+    } 
+  
+  .blank {
+    max-width: 770px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pryce {
+    font-size: 40px;
+    min-width: 770px;
+    width: 80%;
+  }
+  
+  .order .notice, .demonstration .notice{ /*текст перед формой*/ 
+    max-width: 770px;
+    width: 80%;
+    font-size: 22px;
+  }
+  
+  .txt { /*поля формы*/
+    width: 100%;
+    font-size: 22px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .confirm {
+    width: 100%;
+    min-width: 600px;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .booking {
+    margin-right: 0;
+    margin-left: auto;
+  } 
+  
+  
+ footer { /* футер*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #FCF9F4;
+  padding-top: 70px;
+  padding-bottom: 45px;
+  
+}
+
+
+ .foot {/*логотип футера*/
+  width: 100%;
+  font-weight: bold;
+  font-size: 54px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 70px;
+}
+
+  .tel {/*ссылка позвонить*/
+    width: 280px;
+    justify-content: center;
+    text-decoration: none;
+    color: #301309;
+    margin-bottom: 50px;
+  
+  }
+  
+  .tel:hover{
+   font-size: 20px;
+   color: #F2A007; 
+  }
+ 
+  .tel .heading { /* изменение стилей номера тел.*/
+  width: 280px;
+  max-width: 280px;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 0px;
+}
+  .tel p{
+  font-size: 18px;
+  width: 280px;
+  text-align: left;
+  margin-top: -30px;
+}
+  
+  .container{
+  max-width: 100vw;
+  width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}  
+
+ .wrap {
+   width: 60%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   margin-bottom: 0px;
+ }
+
+ .wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
+  width: 420px ;
+  margin-bottom: 25px;
+ }
+  .map {
+    display: block;
+     width: 60vw;
+  }
+  
+  .mapping {
+    max-width: 840px;
+    width: 60vw;
+  }
+  
+ .social {/* блок с иконками соцсетей*/
+  width: 420px; 
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 25px;
+  padding-top: 0px;
+ }
+
+ .pepole {/* размер иконок*/
+  width: 55px;
+ }
+ 
+  .pepole:hover {
+    width: 50px;
+  }
+
+.heading { /* заголовки футера*/
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0px; 
+}
+
+.packing {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 10%;
+ }
+
+.packing .heading {
+  margin-bottom: 30px;
+}
+  
+.website .heading { /*изменение стилей заголовка "на сайт"*/
+  font-weight: 500;
+  font-size: 36px;
+}
+
+.contacts p, .expo p { /* текст*/
+  width: 340px ;
+  font-size: 22px;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+  
+  .dialup span{
+    font-size: 16px;
+    line-height: 0.2;
+  }
+  
+
+.website .button{
+ width: 100%;
+ margin-left: 0;
+ margin-right: 0; 
+}
+
+ .sign { /*блок подписка*/
+  display: flex;
+  flex-wrap: wrap;
+   max-width: 100vw;
+  width: 1400px;
+  justify-content: space-between;
+  margin-bottom: 70px;
+ }
+
+.subscribe {/* форма подписки*/
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.subscribe .txt {/* поле подписки*/
+  width: 70%;
+  height: 60px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+  
+.scrb {
+  width: 30%;
+  max-width: 280px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
