@@ -32,8 +32,6 @@ body {
 .header{ /* позиционирование логотип и меню бургер*/
   display: flex;
   align-items: flex-end;
-  justify-content:space-between;
-  max-width: 500px;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-right: 20px;
@@ -48,14 +46,13 @@ body {
   margin-right: auto;
 }
 
- .bg_menu { /*svg бургера*/
+.bg_menu { /*svg бургера*/
   width: 30px;
   fill:rgba(48, 19, 9, 0.54);
-  margin-left: auto;
+  transition: fill .2s linear, height .2s linear; 
 }
 
 .bg_menu:hover {
-  width: 35px; 
   height: 35px;
   fill: #F2A007;
 }
@@ -72,12 +69,10 @@ body {
       padding-bottom: 145px;
 }
 
- h1 {
+ .trademark {
    color: #fCf9f4;
    font-size: 48px;
    text-align: center;
-   max-width: 500px;
-   min-width: 280px;
    margin-left: auto;
    margin-right: auto;
    background: rgba(242, 160, 7, 0.7);
@@ -90,12 +85,10 @@ body {
   font-size: 20px;
   display: flex;
   align-items: center;
-  text-align: center;
   width: 280px;
   height: 50px;
   background: #FCF9F4;
   border: 1px solid #F2A007;
-  box-sizing: border-box;
   box-shadow: 0px 2px 4px #986A14;
   color: #F2A007;
   justify-content: center;
@@ -110,6 +103,22 @@ body {
   transform: perspective(500px) rotateY(20deg);
 }
 
+.click {/*кнопки в форме*/
+  font-family: 'PT Root UI';
+  text-decoration: none;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F2A007;
+  width: 280px;
+  height: 50px;
+}
+
+.click:hover{ /*наведение на кнопку*/
+  color: #FCF9F4;
+}
+
 .unseen{ /*кнопка на постере*/
  display: none;
 }
@@ -120,17 +129,13 @@ body {
    height: 600px;
    display: flex;
    flex-wrap: wrap;
-   justify-content: flex-start;
    background: #FCF9F4;
-   padding-top: 10px;
    padding-bottom: 25px;
    padding-right: 10px;
    padding-left: 10px;
    box-shadow: 10px 10px 4px rgba(152, 106, 20, 0.6);
    position: absolute;
    top: 0;
-   right: 0;
-   bottom: 0;
    left: 0;
 }
 
@@ -154,7 +159,7 @@ body {
 }
 
 .conceal {
-  width: 70px;
+  width: 40px;
   text-align: right;
 }
 
@@ -178,7 +183,7 @@ body {
 }
 
 .direction:hover {
- font-size: 18px;
+ font-weight: bold;
   color: #F2A007; 
 }
 
@@ -192,15 +197,12 @@ body {
 .call span{
   width: 300px;
   font-size: 12px;
-  padding-top: 0px; 
+  margin-top: -10px; 
 }
  .canvas {
         display: none;
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
       }
 .canvas:target {
   display: block;
@@ -253,7 +255,6 @@ body {
 }
 
 .look {/*заголовок слайдера*/
-  min-width: 280px;
   margin-bottom: 36px;
   font-size: 32px;
   text-align: center;
@@ -268,7 +269,6 @@ body {
 /*сладер*/
 .slider{
   height:490px;
-  text-align:center;
   margin:0 auto;
 }
 .bar{
@@ -294,7 +294,7 @@ body {
   
   overflow:hidden;
 }
-article {
+.snapshot {
   width:500px;
   height:490px;
   background-repeat: no-repeat;
@@ -323,7 +323,7 @@ article {
   line-height:0;
 }
  
-.catalogue article{
+.catalogue .snapshot{
   width:20%;
   float:left;
 }
@@ -332,22 +332,22 @@ article {
   margin:-25% 0 0 0;
   width:100%;}
 
-.regulation label{
+.regulation .mark {
   width: 70px;
   height: 70px;
   opacity: 0.1;
 }
-.regulation label:hover{
+.regulation .mark:hover{
   opacity:0.7}
 
-#slide1:checked ~ .regulation label:nth-child(2),#slide2:checked ~ .regulation label:nth-child(3),#slide3:checked ~ .regulation label:nth-child(4),#slide4:checked ~ .regulation label:nth-child(5),#slide5:checked ~ .regulation label:nth-child(1){
+#slide1:checked ~ .regulation .mark:nth-child(2),#slide2:checked ~ .regulation .mark:nth-child(3),#slide3:checked ~ .regulation .mark:nth-child(4),#slide4:checked ~ .regulation .mark:nth-child(5),#slide5:checked ~ .regulation .mark:nth-child(1){
   background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0xMiwyNWExLDEsMCwwLDEtLjcxLS4yOSwxLDEsMCww%0D%0ALDEsMC0xLjQyTDE4LjU5LDE2bC03LjMtNy4yOWExLDEsMCwxLDEsMS40Mi0xLjQybDgsOGExLDEs%0D%0AMCwwLDEsMCwxLjQybC04LDhBMSwxLDAsMCwxLDEyLDI1WiIvPjwvZz48ZyBpZD0iZnJhbWUiPjxy%0D%0AZWN0IGNsYXNzPSJjbHMtMSIgaGVpZ2h0PSIzMiIgd2lkdGg9IjMyIi8+PC9nPjwvc3ZnPgo=') no-repeat;
   background-color: #f2a007;
   float:right;
   display:block;
 }
 
-#slide1:checked ~ .regulation label:nth-child(5),#slide2:checked ~ .regulation label:nth-child(1),#slide3:checked ~ .regulation label:nth-child(2),#slide4:checked ~ .regulation label:nth-child(3),#slide5:checked ~ .regulation label:nth-child(4){
+#slide1:checked ~ .regulation .mark:nth-child(5),#slide2:checked ~ .regulation .mark:nth-child(1),#slide3:checked ~ .regulation .mark:nth-child(2),#slide4:checked ~ .regulation .mark:nth-child(3),#slide5:checked ~ .regulation .mark:nth-child(4){
   background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDMyIDMyIiB4bWxucz0iaHR0%0D%0AcDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGQ0Y5RjQiPjxkZWZzPjxzdHlsZT4uY2xz%0D%0ALTF7ZmlsbDpub25lO308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIg%0D%0AMiIgaWQ9IkxheWVyXzIiPjxwYXRoIGQ9Ik0yMCwyNWExLDEsMCwwLDEtLjcxLS4yOWwtOC04YTEs%0D%0AMSwwLDAsMSwwLTEuNDJsOC04YTEsMSwwLDEsMSwxLjQyLDEuNDJMMTMuNDEsMTZsNy4zLDcuMjlh%0D%0AMSwxLDAsMCwxLDAsMS40MkExLDEsMCwwLDEsMjAsMjVaIi8+PC9nPjxnIGlkPSJmcmFtZSI+PHJl%0D%0AY3QgY2xhc3M9ImNscy0xIiBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiLz48L2c+PC9zdmc+Cg==') no-repeat;
   background-color: #f2a007;
   float:left;
@@ -358,12 +358,12 @@ article {
   transform:translateZ(0);
   transition:all 0.5s ease-out;
 }
-.regulation label{
+.regulation .mark{
   transform:translateZ(0);
   transition:opacity 0.2s ease-out;
 }
 
-.regulation,.regulation label{
+.regulation,.regulation .mark{
   transform: translateZ(0);
   transition: all 0.5s ease-out;
 }
@@ -377,7 +377,7 @@ article {
   .slider .catalogue{
     padding:2px 0;
   }
-  .slider .regulation label{
+  .slider .regulation .mark{
     transform: scale(0.7);
   }
 }
@@ -391,7 +391,6 @@ article {
 }
 
 .advant{
-   display: block;
    padding-top: 60px;
    padding-bottom: 90px;
    background: #fefcf4;
@@ -465,7 +464,6 @@ article {
 .reveal { /*позиционирование заголвка скрытого текста*/
   display: flex;
   justify-content:space-between;
-  max-width: 500px;
   padding-top: 35px;
   padding-bottom: 35px;
   padding-right: 20px;
@@ -486,13 +484,12 @@ article {
   background: rgba(0, 134, 68, 0.13);
 }
 
-.reveal h3 { /*заголовок блока подробности*/
-  font-weight: bold;
+.specific { /*заголовок блока подробности*/
   font-size: 20px;
   
 }
 
-.detailed span {
+.emphasis {
   font-weight: 500;
 }
 
@@ -507,16 +504,15 @@ article {
 }
 
 .presentation:hover {
-  font-size: 18px;
+  font-weight: bold;
   color: #F2A007; 
 }
 
 .presentation:visited {
    color: #D82F40;
-  font-size: 18px;
 }
 
-.hidden p {
+.hide {
   max-width: 450px;
     font-size: 16px;
     margin-left: auto;
@@ -534,11 +530,9 @@ article {
 
 .order {/*контейнер для формы*/ 
     background: #FEFCF4;
-    margin-top: -2px;
 }
 
 .order, .demonstration{
-    max-width: 500px;
     padding-top: 70px;
     padding-bottom: 65px;
     padding-right: 20px;
@@ -546,7 +540,6 @@ article {
 }
 
 .pryce {/*заголовок для формы*/ 
-    display: block;
     width: 280px;
     font-size: 22px;
     text-align: center;
@@ -556,7 +549,6 @@ article {
 }
 
 .order .notice, .demonstration .notice{ /*текст перед формой*/ 
-    max-width: 450px;
     font-size: 16px;
     margin-left: auto;
     margin-right: auto;
@@ -612,8 +604,7 @@ article {
  border-color: #008644;
 }
 
-.demonstration {/*контейнер для формы*/ 
-    margin-top: -2px;
+.demonstration {/*контейнер для формы*/
     background-color: transparent;
 }
 /* Форма предзаказа конец*/
@@ -687,35 +678,24 @@ footer { /* футер*/
 }
 
 .foot {/*логотип футера*/
-  width: 280px;
-  max-width: 500px;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 45px;
 }
 
 .heading { /* заголовки футера*/
-  width: 280px;
-  max-width: 500px;
-  font-weight: bold;
   font-size: 20px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
 .tel{/*ссылка позвонить*/
-    width: 280px;
     text-decoration: none;
     color: #301309;
   }
   
-  .tel:hover{
+.tel:hover{
    font-size: 20px;
    color: #F2A007; 
   }
@@ -723,9 +703,13 @@ footer { /* футер*/
 .tel .heading { /* изменение стилей номера тел.*/
   font-weight: 400;
   font-size: 36px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 0px;
+}
+
+.calling {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .website .heading { /*изменение стилей заголовка "на сайт"*/
@@ -733,14 +717,18 @@ footer { /* футер*/
   font-size: 36px;
 }
 
-.tel p,.contacts p, .expo p { /* текст*/
+.connexion { /* текст в Контактах*/
   width: 280px;
   font-size: 16px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 20px;
 } 
+
+.dialup {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .sign  .confirm{/*стиль подтверждение на обработку данных*/
   width: 280px;
@@ -756,7 +744,6 @@ footer { /* футер*/
 }
 
 .social {/* блок с иконками соцсетей*/
- width: 300px; 
  margin-left: auto;
  margin-right: auto;
  padding-top: 50px; 
@@ -764,22 +751,21 @@ footer { /* футер*/
 
 .pepole {/* размер иконок*/
   width: 40px;
+  transition: border-radius .2s linear;
 }
 
 .pepole:hover {
-    width: 45px;
+    border-radius: 30%;
   }
 
 .social .heading {/*заголовок соцсетей*/
   margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 0px;
 }
 
 .opium {/*изменение стилей ссылок на соцсети*/
   text-decoration: none;
-  width: 40px;
+  width: 45px;
   margin-left: 8px;
   margin-right: 8px;
 } 
@@ -813,40 +799,33 @@ footer { /* футер*/
   padding-right: 20px;
 }
 
-.announce h3{
-  width: 474px;
-  font-size: 28px;
-  line-height: 35px;
-  color: #FCF9F4;
-}
- .announce p{
-    width: 190px; 
+  .promotion{
+    font-size: 28px;
+    color: #FCF9F4;
   }
   
   .button {
    height: 60px; 
   }
   
+  .click{
+   height: 60px; 
+  }
+  
   .opening {
    width: 190px;
    height: 50px;
-   margin-left: 0;
-   margin-right: 0;
+    text-align: center;
   }
 
-.header{ /* позиционирование логотип и меню бургер*/
-  max-width: 920px;
- }
-
-.logo {
+  .logo {
   font-size: 40px;
  }
 
- .bg_menu { /*svg бургера*/
+  .bg_menu { /*svg бургера*/
   width: 35px;
  }
   .bg_menu:hover {
-    width: 40px; 
     height: 40px;
   }
   
@@ -856,8 +835,7 @@ footer { /* футер*/
    height: 880px;
   }
   
- .hid_head {
-   display: flex;
+  .hid_head {
    width: 100%;
    align-items: center;
   } 
@@ -867,13 +845,12 @@ footer { /* футер*/
   height: 35px;
 }
 
-.close:hover {
-  width: 40px; 
-  height: 40px;
-}
+  .close:hover {
+    width: 40px; 
+    height: 40px;
+  }
   
   .direction {/*пункты меню*/
-    text-decoration: none;
     font-size: 18px;
   }
   
@@ -882,16 +859,12 @@ footer { /* футер*/
   line-height: 5px;
   border-bottom: none;
 }
-
-  .call:hover{
-    font-size: 24px;
-  }
   
   .switch { /*кнопки в скрытом меню*/
   padding-top: 30px;
 }
   
-.post{/*первый экран*/
+  .post{/*первый экран*/
       background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/post_ab.png?raw=true); 
       background-position: center;
       padding-top: 40px;
@@ -904,30 +877,25 @@ footer { /* футер*/
       align-items:  flex-end;
 }
 
-.unseen{ /*кнопка на постере*/
+  .unseen{ /*кнопка на постере*/
  display: block;
  margin-left: auto;
  margin-right: auto;
 }
 
-h1 {
-  max-width: 768px;
-  min-width: 501px;
+  .trademark {
   font-size: 58px;
   line-height: 1.7;
   padding-right: 20px;
   padding-left: 20px;
-  text-align: center;
 }
     
-.description { /*текст*/
-  max-width: 570px;
+  .description { /*текст*/
   font-size: 18px; 
 }
   
   .title{
     display: block;
-    min-width: 501px;
     width: 84%;
     margin-left: auto;
     margin-right: auto;
@@ -936,15 +904,15 @@ h1 {
     font-size: 36px;
   }
   
- .request { /*контейнер для кнопок*/
+  .request { /*контейнер для кнопок*/
   display: none;
 }
 
- .small { /*скрытый банер*/ 
+  .small { /*скрытый банер*/ 
   display: none;
 }
   
- .clip { /*банер коллаж*/
+  .clip { /*банер коллаж*/
    min-width: 501px;
    max-width: 100vw;
    height: 420px;
@@ -956,6 +924,7 @@ h1 {
   }
   
   .transparence {
+    position: relative;
     height: 420px;
    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
     background-repeat: no-repeat;
@@ -963,14 +932,16 @@ h1 {
     background-position: center;
     display: flex;
   }
- .bon {
-    width: 300px;
-    height: 80px;
-   margin-top: 260px;
-    margin-left: 60%;
+  .bon {
+    position: absolute;
+    font-size: 18px;
+    width: 250px;
+    height: 70px;
+    top: 280px;
+    left: 53%;
   }
   
- .bonus { /* ссылка банера*/
+  .bonus { /* ссылка банера*/
     width: 100%;
     height:400px;
     display: block;
@@ -1000,7 +971,7 @@ h1 {
   .slider{
   height:800px;
 }
- article {
+  .snapshot {
   width: 600px;
   height:800px;
 } 
@@ -1008,16 +979,16 @@ h1 {
   .loc1{
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look1.png?raw=true);    	
 }
-.loc2{
+  .loc2{
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look2.png?raw=true);    	
 }
-.loc3{
+  .loc3{
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/looc3.png?raw=true);    	
 }
-.loc4{
+  .loc4{
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look5.png?raw=true);    	
 }
-.loc5{
+  .loc5{
     background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/look8.png?raw=true);    	
 }
   .slider{
@@ -1028,25 +999,18 @@ h1 {
     padding-bottom: 80px;
   }
   
-  .reveal {
-   max-width: 920px; 
-  }
   
-  
-  .reveal h3 { /*заголовок блока подробности*/
+  .specific { /*заголовок блока подробности*/
     font-size: 24px; 
   }
   
-  .hidden p { /*текст блока подробности*/
+  .hide { /*текст блока подробности*/
     max-width: 570px;
     font-size: 18px;
   }
   
   .presentation {/*ссылка на презентацию*/
     font-size: 18px;   
-  }
-  .presentation:hover {
-    font-size: 20px; 
   }
   
   .order, .demonstration  {/*контейнер для формы*/ 
@@ -1055,7 +1019,6 @@ h1 {
   
   .pryce {
     font-size: 28px;
-    max-width: 500px;
     width: 80%;
   }
   
@@ -1075,92 +1038,40 @@ h1 {
     width: 80%;
   }
   
-/* футер*/
-footer { /* футер*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #FCF9F4;
-  padding-top: 45px;
-  padding-bottom: 100px;
-  padding-right: 20px;
-  padding-left: 20px;
-}
+  /* футер*/
 
-.boxing, .wrap, .packing, .sign {
-  display: flex;
-  flex-wrap: wrap;
+  .foot {/*логотип футера*/
   width: 100%;
-  justify-content: center;
-}
-
-.foot {/*логотип футера*/
-  width: 100%;
-  max-width: 500px;
-  font-weight: bold;
   font-size: 36px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 45px;
 }
   
-  .tel{/*ссылка позвонить*/
-    width: 280px;
-    text-decoration: none;
-    color: #301309;
-  }
-  
-  .tel:hover{
-   font-size: 20px;
-   color: #F2A007; 
-  }
 
-.heading { /* заголовки футера*/
+  .heading { /* заголовки футера*/
   width: 100%;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
   margin-bottom: 30px;
-}
-
-.tel .heading { /* изменение стилей номера тел.*/
-  font-weight: 400;
-  font-size: 36px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-}
-  
-  .website {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-.website .heading { /*изменение стилей заголовка "на сайт"*/
-  font-weight: 500;
-  font-size: 36px;
 }
   
   .contacts, .expo{
      width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
-.tel p,.contacts p, .expo p { /* текст*/
-  width: 280px;
+  .connexion, .calling { /* текст*/
   font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+  .dialup {
+    width: 280px;
+  font-size: 22px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-} 
-
-.sign  .confirm{/*стиль подтверждение на обработку данных*/
+  }
+  
+  .sign  .confirm{/*стиль подтверждение на обработку данных*/
   width: 280px;
   font-size: 12px;
   margin-left: auto;
@@ -1170,7 +1081,6 @@ footer { /* футер*/
 }
   
   .sign { /*блок подписка*/
- 
   width: 100%;
   justify-content: ctnter;
   padding-top: 30px;
@@ -1179,54 +1089,28 @@ footer { /* футер*/
   .subscribe{   
     margin-top: 20px;
      margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .subscribe .txt {
         width: 280px;
-     margin-right: auto;
-    margin-left: auto;
   }
   
-.scrb {
+  .scrb {
  margin-top: 80px;
 }
 
-.social {/* блок с иконками соцсетей*/
- display: flex;
+  .social {/* блок с иконками соцсетей*/
+  display: flex;
   flex-wrap: wrap;
- width: 70%;
- justify-content: center;
- margin-left: auto;
- margin-right: auto;
- padding-top: 50px; 
+  justify-content: center;
+  padding-top: 50px; 
 }
 
   .pepole {/* размер иконок*/
     width: 45px;
   }
- 
-  .pepole:hover {
-    width: 50px;
-  }
-  
 
-.social .heading {/*заголовок соцсетей*/
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-}
-
-.opium {/*изменение стилей ссылок на соцсети*/
-  text-decoration: none;
-  width: 40px;
-  margin-left: 8px;
-  margin-right: 8px;
-} 
-
-.map {
+  .map {
   display: none;
 }
 }
@@ -1247,50 +1131,51 @@ footer { /* футер*/
   }
  
   .announce {/*баннер прийти на показ*/
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
- .announce h3{
-  width: 790px;
-  font-size: 44px;
-  line-height: 35px;
-  color: #FCF9F4;
-}
+ .promotion{
+    font-size: 36px;
+    color: #FCF9F4;
+  }
  
   .button {
    height: 60px;
    font-size: 24px;
   }
   
+  .click {
+   height: 60px;
+   font-size: 24px;
+  }
+  
   .opening {
    width: 270px;
-   margin-left: 0;
    margin-right: 0;
   }
 
-.header{ /* позиционирование логотип и меню бургер*/
+  .header{ /* позиционирование логотип и меню бургер*/
   max-width: 1309px;
  }
 
-.logo {
-  width: 200px;
+  .logo {
   font-size: 48px;
   margin-left: auto; 
   margin-right: auto;
  }
 
- .bg_menu { /*svg бургера*/
+  .bg_menu { /*svg бургера*/
   width: 45px;
   height: 45px;
  }
- .bg_menu:hover {
-    width: 50px; 
+  
+  .bg_menu:hover { 
     height: 50px;
   }
   
@@ -1300,9 +1185,7 @@ footer { /* футер*/
    height: 1080px;
   }
   
- .hid_head {
-   display: flex;
-   width: 100%;
+  .hid_head {
    align-items: center;
   } 
   
@@ -1315,19 +1198,14 @@ footer { /* футер*/
   height: 40px;
 }
 
-.close:hover {
+  .close:hover {
   width: 45px; 
   height: 45px;
 }
   
   .direction {/*пункты меню*/
-    text-decoration: none;
     font-size: 24px;
     width: 100%;
-  }
-  
-  .direction:hover{
-    font-size: 26px;
   }
   
   .call{
@@ -1335,10 +1213,6 @@ footer { /* футер*/
   line-height: 5px;
   border-bottom: none;
 }
-
-  .call:hover{
-    font-size: 26px;
-  }
   
   .switch { /*кнопки в скрытом меню*/
   padding-top: 30px;
@@ -1363,9 +1237,7 @@ footer { /* футер*/
  margin-right: auto;
 }
 
-   h1 {
-  max-width: 975px;
-  min-width: 501px;
+  .trademark {
   font-size: 96px;
   line-height: 1.7;
   padding-right: 20px;
@@ -1381,24 +1253,20 @@ footer { /* футер*/
   .title{/*заголовок лето будет*/
     font-size: 48px;
     display: block;
-    min-width: 501px;
-    width: 84%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
-    text-align: center;
   }
   
- .request { /*контейнер для кнопок*/
+  .request { /*контейнер для кнопок*/
   display: none;
 }
 
- .small { /*скрытый банер*/ 
+  .small { /*скрытый банер*/ 
   display: none;
 }
   
- .clip { /*банер коллаж*/
-   min-width: 811px;
+  .clip { /*банер коллаж*/
    max-width: 100vw;
    height: 500px;
    display: block;
@@ -1409,6 +1277,7 @@ footer { /* футер*/
   }
   
   .transparence {
+    position: relative;
     height: 500px;
    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
     background-repeat: no-repeat;
@@ -1416,14 +1285,15 @@ footer { /* футер*/
     background-position: center;
     display: flex;
   }
- .bon {
+  .bon {
+    position: absolute;
     width: 300px;
     height: 80px;
-   margin-top: 330px;
-    margin-left: 60%;
+    top: 330px;
+    left: 60%;
   }
   
- .bonus { /* ссылка банера*/
+  .bonus { /* ссылка банера*/
     width: 100%;
     height:400px;
     height:630px;
@@ -1436,8 +1306,6 @@ footer { /* футер*/
   
   .benefit {/*блок преимущества*/
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
   }
   
   .icon {
@@ -1469,7 +1337,8 @@ footer { /* футер*/
   .slider{
   height:800px;
 }
- article {
+  
+  .snapshot {
   width: 600px;
   height:800px;
 } 
@@ -1510,7 +1379,6 @@ footer { /* футер*/
   
   .atelier {/* подробности-контейнер для картинки и текста*/
     display: flex;
-    width: 100%;
     margin-bottom: 60px;
     align-items: flex-start;
   }
@@ -1520,7 +1388,6 @@ footer { /* футер*/
   }
   
   .studio{/*контейнет для текста*/
-    width: calc(50vw - 10px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1528,7 +1395,7 @@ footer { /* футер*/
     padding-left: 20px;
   } 
   
-  .studio h4 {/*подробности-заголовки*/
+  .indicate {/*подробности-заголовки*/
    font-size: 30px;
    margin-bottom: 50px; 
   }  
@@ -1537,22 +1404,15 @@ footer { /* футер*/
    font-size: 20px;
    margin-bottom: 30px;  
   }
-  .income span{
+  .attention{
     font-weight: bold;
   }
   
   .presentation { /*ссылка на презентацию*/
     font-size: 20px;
   }
-  
-  .presentation:hover {
-    font-size: 22px;
-  }
 
-  .order, .demonstration  {/*контейнер для формы*/ 
-    max-width: 1309px;
-    }
-  
+ 
   .blank {
     max-width: 770px;
     width: 80%;
@@ -1561,7 +1421,6 @@ footer { /* футер*/
   }
   .pryce {
     font-size: 40px;
-    min-width: 770px;
     width: 80%;
   }
   
@@ -1574,74 +1433,45 @@ footer { /* футер*/
   .txt { /*поля формы*/
     width: 100%;
     font-size: 22px;
-    margin-left: 0;
-    margin-right: 0;
   }
   
   .confirm {
-    width: 100%;
     min-width: 600px;
     font-size: 14px;
     margin-left: 0;
-    margin-right: 0;
   }
   
-  .catalog {
+  .booking {
     margin-right: 0;
   } 
-  
-  
- footer { /* футер*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #FCF9F4;
+   
+  footer { /* футер*/
   padding-top: 70px;
   padding-bottom: 45px;
   
 }
 
-
-.foot {/*логотип футера*/
-  width: 100%;
-  max-width: 250px;
-  font-weight: bold;
+  .foot {/*логотип футера*/
   font-size: 54px;
-  text-align: left;
   margin-left: 0;
-  margin-right: 0;
   margin-bottom: 90px;
 }
 
   .tel {/*ссылка позвонить*/
-    width: 280px;
-    justify-content: center;
-    text-decoration: none;
-    color: #301309;
     margin-bottom: 70px;
   }
-  
-  .tel:hover{
-   font-size: 20px;
-   color: #F2A007; 
-  }
  
- .tel .heading { /* изменение стилей номера тел.*/
-  width: 280px;
-  max-width: 280px;
+  .tel .heading { /* изменение стилей номера тел.*/
   font-weight: 700;
-  font-size: 36px;
-  margin-bottom: 0px;
 }
- .tel p{
+  
+  .calling{
   font-size: 18px;
-  width: 280px;
   text-align: left;
   margin-top: -30px;
 }
   
- .container{
-  width: 100%; 
+  .container{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1649,18 +1479,12 @@ footer { /* футер*/
 }  
 
   .wrap {
-  width: 60%;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;  
   margin-bottom: 0px;
 }
-
-  .wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
- width: 420px ;
- margin-bottom: 25px;
-}
+  
   .map {
     display: block;
      width: 60vw;
@@ -1670,67 +1494,52 @@ footer { /* футер*/
     width: 60vw;
   }
   
- .social {/* блок с иконками соцсетей*/
-    width: 420px; 
+  .social {/* блок с иконками соцсетей*/
     margin-left: 0;
-    margin-right: 0;
     margin-bottom: 25px;
     padding-top: 0px;
  }
 
-
   .pepole {/* размер иконок*/
     width: 50px;
   }
- 
-  .pepole:hover {
-    width: 45px;
-  }
 
-.heading { /* заголовки футера*/
-  font-weight: bold;
+  .heading { /* заголовки футера*/
   font-size: 30px;
   text-align: left;
-  margin-left: 0;
-  margin-right: 0;
   margin-top: 0px; 
 }
 
-.packing {
+  .packing {
   width: 30%;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
  }
 
-.packing .heading {
+  .packing .heading {
   margin-bottom: 30px;
 }
 
-.website .heading { /*изменение стилей заголовка "на сайт"*/
+  .website .heading { /*изменение стилей заголовка "на сайт"*/
   font-weight: 500;
   font-size: 36px;
 }
 
-.contacts p, .expo p { /* текст*/
+  .connexion, .dialup { /* текст*/
   width: 340px ;
   font-size: 22px;
   text-align: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
 }
   
-  .dialup span{
-    font-size: 16px;
-    line-height: 0.2;
+  .website {
+    width: 100%;
   }
 
-.website .button{
- width: 100%;
- margin-left: 0;
- margin-right: 0; 
-}
+  .website .button{
+   width: 100%;
+    max-width: 280px;
+   margin-left: 0;
+   margin-right: 0; 
+  }
 
  .sign { /*блок подписка*/
   display: flex;
@@ -1740,14 +1549,14 @@ footer { /* футер*/
   margin-bottom: 70px;
  }
 
-.subscribe {/* форма подписки*/
+  .subscribe {/* форма подписки*/
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
 }
 
-.subscribe .txt {/* поле подписки*/
+  .subscribe .txt {/* поле подписки*/
   width: 70%;
   height: 60px;
   margin-left: 0;
@@ -1756,8 +1565,9 @@ footer { /* футер*/
   margin-bottom: 0;
 }
   
-.scrb {
+  .scrb {
   width: 30%;
+    max-width: 280px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -1800,11 +1610,8 @@ footer { /* футер*/
     margin-right: auto;
 }
 
- .announce h3{
-  font-size: ;  
-  width: 790px;
-  font-size: 44px;
-  line-height: 35px;
+  .promotion{
+  font-size: 48px;
   color: #FCF9F4;
 }
  
@@ -1813,13 +1620,17 @@ footer { /* футер*/
    font-size: 24px;
   }
   
+  .click {
+   height: 60px;
+   font-size: 24px;
+  }
+  
   .opening {
    width: 270px;
-   margin-left: 0;
    margin-right: 0;
   }
 
-.header{ /* позиционирование логотип и меню бургер*/
+  .header{ /* позиционирование логотип и меню бургер*/
   max-width: 100vw;
   width: 1400px;
   margin-left: auto;
@@ -1827,19 +1638,17 @@ footer { /* футер*/
   
  }
 
-.logo {
-  width: 200px;
+  .logo {
   font-size: 48px;
   margin-left: auto; 
   margin-right: auto;
  }
 
- .bg_menu { /*svg бургера*/
+  .bg_menu { /*svg бургера*/
   width: 45px;
   height: 45px;
  }
- .bg_menu:hover {
-    width: 50px; 
+  .bg_menu:hover {
     height: 50px;
   }
   
@@ -1849,9 +1658,7 @@ footer { /* футер*/
    height: 1080px;
   }
   
- .hid_head {
-   display: flex;
-   width: 100%;
+  .hid_head {
    align-items: center;
   } 
   
@@ -1864,7 +1671,7 @@ footer { /* футер*/
   height: 40px;
 }
 
-.close:hover {
+  .close:hover {
   width: 45px; 
   height: 45px;
 }
@@ -1875,20 +1682,11 @@ footer { /* футер*/
     width: 100%;
   }
   
-  .direction:hover{
-    font-size: 26px;
-  }
-  
   .call{
-  font-size: 28px;
-  line-height: 5px;
-  border-bottom: none;
- }
-
-  .call:hover{
-    font-size: 26px;
+    font-size: 28px;
+    border-bottom: none;
   }
-  
+
   .switch { /* контейнер для кнопок в скрытом меню*/
     padding-top: 50px;
     margin-left: auto;
@@ -1898,8 +1696,6 @@ footer { /* футер*/
   
   .catalog, .show {/*кнопки в скрытом меню*/
     width: 280px;
-    margin-left: 0;
-    margin-right: 0;
   }
   
   .post{/*первый экран*/
@@ -1918,22 +1714,16 @@ footer { /* футер*/
 
   .unseen{ /*кнопка на постере*/
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     min-width: 80%;
 }
 
-   h1 {
+  .trademark {
     max-width: 975px;
     min-width: 80%;
     font-size: 96px;
     line-height: 1.7;
-    padding-right: 20px;
-    padding-left: 20px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+  }
   
   .intro {
     max-width: 975px;
@@ -1958,16 +1748,15 @@ footer { /* футер*/
     text-align: center;
   }
   
- .request { /*контейнер для кнопок*/
+  .request { /*контейнер для кнопок*/
   display: none;
 }
 
- .small { /*скрытый банер*/ 
+  .small { /*скрытый банер*/ 
   display: none;
 }
   
- .clip { /*банер коллаж*/
-   min-width: 811px;
+  .clip { /*банер коллаж*/
    max-width: 100vw;
    height: 650px;
    display: block;
@@ -1978,6 +1767,7 @@ footer { /* футер*/
   }
   
   .transparence {
+    position: relative;
     height: 650px;
    background-image: url(https://github.com/Anastasiya-Danilova/New-collection2019/blob/master/img/png768-1440/bonopasyti.png?raw=true);
     background-repeat: no-repeat;
@@ -1986,28 +1776,20 @@ footer { /* футер*/
     display: flex;
   }
   
- .bon {
-    width: 300px;
-    height: 80px;
-    margin-top: 420px;
-    margin-left: 60%;
+  .bon {
+    position: absolute;
+    width: 340px;
+    height: 90px;
+    top: 440px;
+    left: 57%;
   }
-  
- .bonus { /* ссылка банера*/
-    width: 100%;
-    height:400px;
-    height:630px;
-    display: block;
-  }
-  
+ 
   .advant { /* скрытый блок преимущества*/
     display: none;  
   }
   
   .benefit {/*блок преимущества*/
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
   }
   
   .designation {/*иконки преимущества*/
@@ -2036,47 +1818,23 @@ footer { /* футер*/
   display: none;
 }
   
- .gallery{
-    display: block;
-    padding-bottom: 100px;
+  .gallery {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-bottom: 110px;
+    margin-left: auto;
+  }
+  img {
+     margin-bottom: 30px; 
   }
   
   .passage {
+    margin-top: 60px;
     width: 320px;
   }
-  
-  
-  .band {
-    width: 1200px;
-    display: flex;
-    height: 460px;
-    justify-content: space-between;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 90px;
-    margin-left: auto;
-  }
-  
-  .dress {
-    width: 575px;
-    height: 460px;
-    margin: 10px;
-  }
-  .garb {
-    width: 270px;
-    height: 460px;
-    margin: 10px;
-  }
-  
-  .clothes {
-    width: 300px;
-    height: 460px;
-    margin: 10px;
-  }
-  
-  
-  
- 
   
   .detailed {/*спрятать блок для мобильных*/
     display: none;
@@ -2091,7 +1849,6 @@ footer { /* футер*/
   
   .atelier {/* подробности-контейнер для картинки и текста*/
     display: flex;
-    width: 100%;
     margin-bottom: 60px;
     align-items: center;
   }
@@ -2101,7 +1858,6 @@ footer { /* футер*/
   }
   
   .studio{/*контейнет для текста*/
-    width: calc(50vw - 10px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -2109,7 +1865,7 @@ footer { /* футер*/
     padding-left: 20px;
   } 
   
-  .studio h4 {/*подробности-заголовки*/
+  .indicate {/*подробности-заголовки*/
     width: 85%;
     font-size: 30px;
     margin-bottom: 50px;
@@ -2124,7 +1880,8 @@ footer { /* футер*/
     margin-left: auto;
     margin-right: auto;
   }
-  .income span{
+  
+  .attention{
     font-weight: bold;
   }
   
@@ -2132,20 +1889,13 @@ footer { /* футер*/
     font-size: 20px;
   }
   
-  .presentation:hover {
-    font-size: 22px;
-  }
-
-  .order, .demonstration  {/*контейнер для формы*/ 
-    max-width: 100vw;
-    } 
-  
   .blank {
     max-width: 770px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
+  
   .pryce {
     font-size: 40px;
     min-width: 770px;
@@ -2161,75 +1911,47 @@ footer { /* футер*/
   .txt { /*поля формы*/
     width: 100%;
     font-size: 22px;
-    margin-left: 0;
-    margin-right: 0;
   }
   
   .confirm {
-    width: 100%;
     min-width: 600px;
     font-size: 14px;
     margin-left: 0;
-    margin-right: 0;
   }
   
   .booking {
     margin-right: 0;
     margin-left: auto;
   } 
-  
-  
- footer { /* футер*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #FCF9F4;
+ 
+  footer { /* футер*/
   padding-top: 70px;
   padding-bottom: 45px;
   
 }
 
-
- .foot {/*логотип футера*/
-  width: 100%;
+  .foot {/*логотип футера*/
   font-weight: bold;
   font-size: 54px;
-  text-align: left;
   margin-left: 0;
-  margin-right: 0;
   margin-bottom: 70px;
 }
 
   .tel {/*ссылка позвонить*/
-    width: 280px;
-    justify-content: center;
-    text-decoration: none;
-    color: #301309;
     margin-bottom: 50px;
-  
-  }
-  
-  .tel:hover{
-   font-size: 20px;
-   color: #F2A007; 
   }
  
   .tel .heading { /* изменение стилей номера тел.*/
-  width: 280px;
-  max-width: 280px;
   font-weight: 700;
-  font-size: 36px;
-  margin-bottom: 0px;
 }
-  .tel p{
+  
+  .calling{
   font-size: 18px;
-  width: 280px;
   text-align: left;
   margin-top: -30px;
 }
   
   .container{
-  max-width: 100vw;
   width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -2237,18 +1959,16 @@ footer { /* футер*/
   margin-bottom: 70px;
 }  
 
- .wrap {
+  .wrap {
    width: 60%;
-   display: flex;
-   flex-wrap: wrap;
    justify-content: flex-start;
    margin-bottom: 0px;
  }
 
- .wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
-  width: 420px ;
+  .wrap .heading, .sign .heading { /* заголовки заголовки соцсети и подписки*/
   margin-bottom: 25px;
  }
+  
   .map {
     display: block;
      width: 60vw;
@@ -2259,70 +1979,57 @@ footer { /* футер*/
     width: 60vw;
   }
   
- .social {/* блок с иконками соцсетей*/
-  width: 420px; 
+  .social {/* блок с иконками соцсетей*/
+  width: 100%; 
   margin-left: 0;
-  margin-right: 0;
   margin-bottom: 25px;
   padding-top: 0px;
  }
 
- .pepole {/* размер иконок*/
+  .pepole {/* размер иконок*/
   width: 55px;
  }
- 
-  .pepole:hover {
-    width: 50px;
-  }
 
-.heading { /* заголовки футера*/
-  font-weight: bold;
+  .heading { /* заголовки футера*/
   font-size: 30px;
   text-align: left;
   margin-left: 0;
-  margin-right: 0;
   margin-top: 0px; 
 }
 
-.packing {
+  .packing {
   width: 30%;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: flex-start;
   margin-left: 10%;
  }
 
-.packing .heading {
+  .packing .heading {
   margin-bottom: 30px;
 }
   
-.website .heading { /*изменение стилей заголовка "на сайт"*/
+  .website .heading { /*изменение стилей заголовка "на сайт"*/
   font-weight: 500;
   font-size: 36px;
 }
 
-.contacts p, .expo p { /* текст*/
-  width: 340px ;
-  font-size: 22px;
-  text-align: left;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
-}
-  
-  .dialup span{
-    font-size: 16px;
-    line-height: 0.2;
+  .connexion, .dialup { /* текст*/
+    font-size: 22px;
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 20px;
   }
   
-
-.website .button{
- width: 100%;
- margin-left: 0;
- margin-right: 0; 
+  .website {
+    width: 100%;
+  }
+  
+  .website .button{
+   width: 100%;
+    max-width: 280px;
+   margin-left: 0;
 }
 
- .sign { /*блок подписка*/
+  .sign { /*блок подписка*/
   display: flex;
   flex-wrap: wrap;
    max-width: 100vw;
@@ -2331,14 +2038,14 @@ footer { /* футер*/
   margin-bottom: 70px;
  }
 
-.subscribe {/* форма подписки*/
+  .subscribe {/* форма подписки*/
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
 }
 
-.subscribe .txt {/* поле подписки*/
+  .subscribe .txt {/* поле подписки*/
   width: 70%;
   height: 60px;
   margin-left: 0;
@@ -2347,7 +2054,7 @@ footer { /* футер*/
   margin-bottom: 0;
 }
   
-.scrb {
+  .scrb {
   width: 30%;
   max-width: 280px;
   margin-left: 0;
@@ -2360,5 +2067,5 @@ footer { /* футер*/
   margin-left: 0;
   margin-right: 0;
   margin-top: 10px;
-  }  
+  }   
 } 
