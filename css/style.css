@@ -503,7 +503,25 @@ body {
   color: #301309; 
 }
 
+.tv {
+  display: block;
+  width: 280px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  padding-right: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  color: #301309; 
+}
+
 .presentation:hover {
+  font-weight: bold;
+  color: #F2A007; 
+}
+
+.tv:hover {
   font-weight: bold;
   color: #F2A007; 
 }
@@ -511,6 +529,9 @@ body {
 .presentation:visited {
    color: #D82F40;
 }
+.tv:visited {
+   color: #D82F40;
+} 
 
 .hide {
   max-width: 450px;
@@ -1412,6 +1433,10 @@ footer { /* футер*/
     font-size: 20px;
   }
 
+  .tv {
+   font-size: 20px;
+   margin-right: 0; 
+  }
  
   .blank {
     max-width: 770px;
@@ -1887,6 +1912,11 @@ footer { /* футер*/
   
   .presentation { /*ссылка на презентацию*/
     font-size: 20px;
+  }
+  
+  .tv {
+   font-size: 20px;
+   margin-right: 0; 
   }
   
   .blank {
